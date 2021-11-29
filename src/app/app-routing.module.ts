@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { CourseListComponent } from './courses/course-list/course-list.component';
+import { CourseComponent } from './courses/course/course.component';
+import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManagerComponent } from './manager/manager.component';
@@ -23,6 +26,12 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'admin', component: AdminComponent, canActivate:[AuthGuard],data:{role:'1'}},
   {path:'manager', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'2'}},
+  {path:'courses',component:CoursesComponent},
+  {path:'course', component: CourseComponent},
+  {path:'courselist',component: CourseListComponent},
+  {path:'course/:corId', component: CourseComponent},
+  {path:'courselist/course',component: CourseComponent}
+ 
 
 
 ];

@@ -21,6 +21,9 @@ import { ResourceComponent } from './resources/resource/resource.component';
 import { ResourceListComponent } from './resources/resource-list/resource-list.component';
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { CordinatorComponent } from './cordinator/cordinator.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CourseComponent } from './courses/course/course.component';
+import { CourseListComponent } from './courses/course-list/course-list.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { CordinatorComponent } from './cordinator/cordinator.component';
     ResourcesComponent,
     ResourceComponent,
     ResourceListComponent,
-    CordinatorComponent
+    CordinatorComponent,
+    CoursesComponent,
+    CourseComponent,
+    CourseListComponent
   ],
   imports: [
     BrowserModule,

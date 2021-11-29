@@ -1,0 +1,94 @@
+<form name="corform" #form="ngForm" autocomplete="off"
+(ngSubmit)="onSubmit(form)">
+
+    <!--Course ID-->
+
+    <input type="text" name="CourseId" [(ngModel)]="corservice.formData.CourseId" />
+
+    <!--Course Name-->
+
+    <div class="form-group">
+
+        <label>Course Name</label>
+
+        <input name="CourseName" #CourseName="ngModel" [(ngModel)]="corservice.formData.CourseName"
+            class="form-control" place holder="enter name " minLength="10" maxLength="25" required
+            [ngClass]="{'is invalid':CourseName.touched && CourseName.invalid}" />
+
+        <div class="validation-error" *ngIf="CourseName.touched&&CourseName.invalid">
+
+            <div *ngIf="CourseName.errors.required">Course Name is required</div>
+
+        </div>
+
+
+
+    </div>
+
+    <!--IsPublic-->
+
+    <div class="form-group">
+        <div class="form-check">
+            <label class="form-check-label">IsPublic</label>
+            <input type="checkbox" name="IsPublic" id="IsPublic" #IsPublic="ngModel"
+                [(ngModel)]="corservice.formData.IsPublic" class="form-check-input">
+
+        </div>
+    </div>
+
+    <!--IsAvailable-->
+
+    <div class="form-group">
+        <div class="form-check">
+            <label class="form-check-label">IsAvailable</label>
+            <input type="checkbox" name="IsAvailable" id="IsAvailable" #IsAvailable="ngModel"
+                [(ngModel)]="corservice.formData.IsAvailable" class="form-check-input">
+
+        </div>
+    </div>
+
+    <!--CoursePrice-->
+
+    <div class="form-group">
+
+        <label>Course Price</label>
+
+        <input name="CoursePrice" #CoursePrice="ngModel" [(ngModel)]="corservice.formData.CoursePrice"
+            class="form-control" place holder="enter Course Price " minLength="2" maxLength="25" required
+            [ngClass]="{'is invalid':CoursePrice.touched && CoursePrice.invalid}" />
+
+        <div class="validation-error" *ngIf="CoursePrice.touched&&CoursePrice.invalid">
+
+            <div *ngIf="CoursePrice.errors.required">Course Price is required</div>
+
+        </div>
+    </div>
+
+
+    <!--CourseDescription-->
+
+    <div class="form-group">
+
+        <label>Course Description</label>
+
+        <input name="CourseDescription" #CourseDescription="ngModel" [(ngModel)]="corservice.formData.CourseDescription"
+            class="form-control" place holder="enter Course Description " minLength="2" maxLength="25" required
+            [ngClass]="{'is invalid':CourseDescription.touched && CourseDescription.invalid}" />
+
+        <div class="validation-error" *ngIf="CourseDescription.touched&&CourseDescription.invalid">
+
+            <div *ngIf="CourseDescription.errors.required">Course Description is required</div>
+
+        </div>
+    </div>
+
+
+    <!--Submit button-->
+    <br>
+    <div class="form-group" >
+        <button type="submit" [disabled]="!(form.valid && form.dirty)"
+        class="btn btn-lg btn-primary form-control">Submit</button>
+    </div>
+
+
+</form>
