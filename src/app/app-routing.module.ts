@@ -23,7 +23,7 @@ import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenqu
 
 const routes: Routes = [
 
-  {path:'', redirectTo:"/login",pathMatch: 'full'},
+  {path:'', redirectTo:"/home",pathMatch: 'full'},
   {path:'resource', component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resources',component:ResourcesComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resourcelist',component: ResourceListComponent},
@@ -38,8 +38,19 @@ const routes: Routes = [
   {path:'courselist',component: CourseListComponent},
   {path:'course/:corId', component: CourseComponent},
   {path:'courselist/course',component: CourseComponent},
+
+  {path:'Cenquiries',component:CenquiriesComponent},
+  {path:'Cenquiry',component:CenquiryComponent},
+  {path:'CenquiryList',component:CenquiryListComponent},
+  {path:'UpdateCenquiry',component:UpdatecenquiryComponent},
+  {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
+  {path:'Renquiries',component:RenquiriesComponent},
+  {path:'Renquiry',component:RenquiryComponent},
+  {path:'UpdateRenquiry',component:UpdaterenquiryComponent},
+
   {path:'cenquiries',component:CenquiriesComponent},
   {path:'cenquiry',component:CenquiryComponent},
+
 
   {path:'cenquirylist',component:CenquiryListComponent},
   {path:'updatecenquiry',component:UpdatecenquiryComponent},
@@ -47,7 +58,9 @@ const routes: Routes = [
   {path:'renquiries',component:RenquiriesComponent},
   {path:'renquiry',component:RenquiryComponent},
   {path:'updaterenquiry',component:UpdaterenquiryComponent},
+
   {path:'renquiry/:REnquiryId',component:RenquiryComponent},
+
 
   {path:'cenquiryList',component:CenquiryListComponent},
   {path:'updateCenquiry',component:UpdatecenquiryComponent},
@@ -56,6 +69,8 @@ const routes: Routes = [
   {path:'renquiry',component:RenquiryComponent},
   {path:'updateRenquiry',component:UpdaterenquiryComponent},
   {path:'renquiry/:renquiryId',component:RenquiryComponent},
+
+
 
   {path:'renquirylist',component:RenquiryListComponent}
 

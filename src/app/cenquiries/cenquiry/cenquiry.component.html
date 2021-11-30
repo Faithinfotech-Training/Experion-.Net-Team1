@@ -1,5 +1,5 @@
 <form name="cenquiryform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
-    <!--Course Enquiry Id-->
+    <!--Course Enquiry Id
     <div class="form-group">
         <label><b>Course Enquiry Id:</b></label>
         <input name="CourseEnquiryId" #CourseEnquiryId="ngModel" [ngModel]="cenquiryService.formData.CourseEnquiryId" class="form-control" placeholder="Enter Course Enquiry Id" [ngClass]="{'is-invalid':CourseEnquiryId.touched && CourseEnquiryId.invalid}" />
@@ -7,7 +7,7 @@
             <div *ngIf="CourseEnquiryId.errors.required">
                 Course Enquiry Id required</div>
         </div>
-    </div>
+    </div>-->
 
     <!--Description-->
     <div class="form-group">
