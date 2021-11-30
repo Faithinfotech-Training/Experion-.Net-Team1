@@ -21,7 +21,8 @@
          </tr>
      </thead>
      <tbody>
-         <tr *ngFor="let crs of courseService.courses  |filter: filter |paginate:{itemsPerPage:2, currentPage: page}" >
+         <tr  *ngFor="let crs of courseService.courses  |filter: filter |paginate:{itemsPerPage:2, currentPage: page}" >
+            <ng-container *ngIf="crs.IsAvailable==true">
              <td (click)="populateForm(crs)">{{crs.CourseId}}</td>
              <td (click)="populateForm(crs)">{{crs.CourseName}}</td>
              <td (click)="populateForm(crs)">{{crs.CoursePrice}}</td>
@@ -30,8 +31,8 @@
                  <button (click)="deleteCourse(crs)"class="btn btn-sm btn-outline-danger"
                  >X</button>&nbsp;
                  <button (click)="updateCourse(crs.CourseId)"  class="btn btn-info" style="margin-left: 10px;">Edit</button>
-                 
-             </td>
+                 </td>
+                </ng-container>     
          </tr>
      </tbody>
     </table>
