@@ -18,23 +18,23 @@ export class CenquiryService {
   //binding course enquiry data to get
   bindListCEnquiry()
   {
-    this.httpClient.get(environment.apiUrl+"/api/CourseEnquiry/GetCourseEnquiry")
+    this.httpClient.get(environment.apiUrl+"/api/enquiry/GetCourseEnquiry")
     .toPromise().then(response=>
       this.cenquiries=response as Cenquiry[]);
   }
   //insert
   insertCEnquiry(cenquiry: Cenquiry): Observable<any>
   {
-    return this.httpClient.post(environment.apiUrl + "/api/CourseEnquiry/AddCourseEnquiry",cenquiry);
+    return this.httpClient.post(environment.apiUrl + "/api/Enquiry/AddCourseEnquiry",cenquiry);
   }
   //update
   updateCEnquiry(cenquiry:Cenquiry):Observable<any>
   {
-    return this.httpClient.put(environment.apiUrl+ "/api/CourseEnquiry/UpdateCourseEnquiry",cenquiry);
+    return this.httpClient.put(environment.apiUrl+ "/api/Enquiry/UpdateCourseEnquiry",cenquiry);
   }
   //get a particular course enquiry
   getCEnquiry(CEnquiryId:number):Observable<any>{
-    return this.httpClient.get(environment.apiUrl+"/api/CourseEnquiry/GetCEnquiryById?id="+CEnquiryId);
+    return this.httpClient.get(environment.apiUrl+"/api/Enquiry/GetCEnquiryById?id="+CEnquiryId);
   }
   
 }

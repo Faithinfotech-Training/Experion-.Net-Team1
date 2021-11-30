@@ -17,23 +17,23 @@ export class RenquiryService {
     //binding customer data to get
     bindListREnquiry()
     {
-      this.httpClient.get(environment.apiUrl+"/api/CourseEnquiry/GetResourceEnquiry")
+      this.httpClient.get(environment.apiUrl+"/api/enquiry/GetResourceEnquiry")
       .toPromise().then(response=>
         this.renquiries=response as Renquiry[]);
     }
     //insert
     insertREnquiry(renquiry: Renquiry): Observable<any>
     {
-      return this.httpClient.post(environment.apiUrl + "/api/CourseEnquiry/AddResourceEnquiry",renquiry);
+      return this.httpClient.post(environment.apiUrl + "/api/enquiry/AddResourceEnquiry",renquiry);
     }
     //update
     updateREnquiry(renquiry:Renquiry):Observable<any>
     {
-      return this.httpClient.post(environment.apiUrl+ "/api/CourseEnquiry/UpdateResourceEnquiry",renquiry);
+      return this.httpClient.post(environment.apiUrl+ "/api/enquiry/UpdateResourceEnquiry",renquiry);
     }
     //get a particular resource enquiry
     getREnquiry(REnquiryId:number):Observable<any>{
-      return this.httpClient.get(environment.apiUrl+"/api/CourseEnquiry/GetREnquiryById?id="+REnquiryId);
+      return this.httpClient.get(environment.apiUrl+"/api/enquiry/GetREnquiryById?id="+REnquiryId);
     }
   }
   

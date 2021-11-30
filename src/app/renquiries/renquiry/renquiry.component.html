@@ -1,5 +1,5 @@
 <form name="renquiryform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
-    <!--Resource Enquiry Id-->
+    <!--Resource Enquiry Id
     <div class="form-group">
         <label><b>Resource Enquiry Id:</b></label>
         <input name="ResourceEnquiryId" #ResourceEnquiryId="ngModel" [ngModel]="renquiryService.formData.ResourceEnquiryId" class="form-control" placeholder="Enter Resource Enquiry Id" [ngClass]="{'is-invalid':ResourceEnquiryId.touched && ResourceEnquiryId.invalid}"
@@ -8,7 +8,7 @@
             <div *ngIf="ResourceEnquiryId.errors.required">
                 Resource Enquiry Id required</div>
         </div>
-    </div>
+    </div>-->
 
     <!--Description-->
     <div class="form-group">
