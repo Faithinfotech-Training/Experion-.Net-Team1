@@ -14,7 +14,12 @@ import {AuthGuard} from './shared/auth.guard';
 import { CenquiriesComponent } from './cenquiries/cenquiries.component';
 import { CenquiryListComponent } from './cenquiries/cenquiry-list/cenquiry-list.component';
 import { CenquiryComponent } from './cenquiries/cenquiry/cenquiry.component';
-import { UpdateenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
+import { UpdatecenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
+//import { Routes, RouterModule } from '@angular/router';
+import { RenquiriesComponent } from './renquiries/renquiries.component';
+import { RenquiryListComponent } from './renquiries/renquiry-list/renquiry-list.component';
+import { RenquiryComponent } from './renquiries/renquiry/renquiry.component';
+import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenquiry.component';
 
 const routes: Routes = [
 
@@ -38,9 +43,13 @@ const routes: Routes = [
   {path:'Cenquiries',component:CenquiriesComponent},
   {path:'Cenquiry',component:CenquiryComponent},
   {path:'CenquiryList',component:CenquiryListComponent},
-  {path:'UpdateCenquiry',component:UpdateenquiryComponent},
+  {path:'UpdateCenquiry',component:UpdatecenquiryComponent},
   {path:'cenquiry/:CEnquiryId',component:CenquiryComponent}
- 
+  {path:'Renquiries',component:RenquiriesComponent},
+  {path:'Renquiry',component:RenquiryComponent},
+  {path:'UpdateRenquiry',component:UpdaterenquiryComponent},
+  {path:'renquiry/:REnquiryId',component:RenquiryComponent},
+  {path:'renquirylist',component:RenquiryListComponent}
 
 
 ];
