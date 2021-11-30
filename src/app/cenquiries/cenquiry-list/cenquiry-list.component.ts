@@ -32,8 +32,7 @@ export class CenquiryListComponent implements OnInit {
     }
    
       //update course enquiry
-      updateCEnquiry(CEnquiryId: number)
-    {
+      updateCEnquiry(CEnquiryId: number){
       console.log(CEnquiryId);
       this.router.navigate(['cenquiry',CEnquiryId]);
     }

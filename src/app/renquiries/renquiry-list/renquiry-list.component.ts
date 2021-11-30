@@ -30,7 +30,7 @@ export class RenquiryListComponent implements OnInit {
       this.renquiryService.formData=Object.assign({},renquiry);
     }
    
-      //update course enquiry
+      //update resource enquiry
       updateREnquiry(REnquiryId: number)
     {
       console.log(REnquiryId);

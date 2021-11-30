@@ -11,15 +11,17 @@ import { ResourceListComponent } from './resources/resource-list/resource-list.c
 import { ResourceComponent } from './resources/resource/resource.component';
 import { ResourcesComponent } from './resources/resources.component';
 import {AuthGuard} from './shared/auth.guard';
+
 import { CenquiriesComponent } from './cenquiries/cenquiries.component';
 import { CenquiryListComponent } from './cenquiries/cenquiry-list/cenquiry-list.component';
 import { CenquiryComponent } from './cenquiries/cenquiry/cenquiry.component';
 import { UpdatecenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
-//import { Routes, RouterModule } from '@angular/router';
+
 import { RenquiriesComponent } from './renquiries/renquiries.component';
 import { RenquiryListComponent } from './renquiries/renquiry-list/renquiry-list.component';
 import { RenquiryComponent } from './renquiries/renquiry/renquiry.component';
 import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenquiry.component';
+
 import { CordinatorComponent } from './cordinator/cordinator.component';
 
 const routes: Routes = [
@@ -41,36 +43,18 @@ const routes: Routes = [
   {path:'courselist',component: CourseListComponent},
   {path:'course/:corId', component: CourseComponent},
   {path:'courselist/course',component: CourseComponent},
+
   {path:'cenquiries',component:CenquiriesComponent},
   {path:'cenquiry',component:CenquiryComponent},
-  {path:'cenquiryList',component:CenquiryListComponent},
-  {path:'updateCenquiry',component:UpdatecenquiryComponent},
-  {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
-  {path:'renquiries',component:RenquiriesComponent},
-  {path:'renquiry',component:RenquiryComponent},
-  {path:'updateRenquiry',component:UpdaterenquiryComponent},
-  //{path:'cenquiries',component:CenquiriesComponent},
- // {path:'cenquiry',component:CenquiryComponent},
- // {path:'cenquirylist',component:CenquiryListComponent},
+  {path:'cenquirylist',component:CenquiryListComponent},
   {path:'updatecenquiry',component:UpdatecenquiryComponent},
   {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
+
   {path:'renquiries',component:RenquiriesComponent},
   {path:'renquiry',component:RenquiryComponent},
   {path:'updaterenquiry',component:UpdaterenquiryComponent},
   {path:'renquiry/:REnquiryId',component:RenquiryComponent},
-  {path:'cenquiryList',component:CenquiryListComponent},
-  {path:'updateCenquiry',component:UpdatecenquiryComponent},
-  {path:'cenquiry/:cenquiryId',component:CenquiryComponent},
-  {path:'renquiries',component:RenquiriesComponent},
-  {path:'renquiry',component:RenquiryComponent},
-  {path:'updateRenquiry',component:UpdaterenquiryComponent},
-  {path:'renquiry/:renquiryId',component:RenquiryComponent},
-
-
-
   {path:'renquirylist',component:RenquiryListComponent}
-
-
 ];
 
 @NgModule({
