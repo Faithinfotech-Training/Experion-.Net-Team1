@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="header">
+        <h5>Course Enquiry Info</h5>
+        <!--search functionality-->
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Search here..." [(ngModel)]="filter">
+        </div>
+        <a [routerLink]="['']" class="btn btn-primary" style="float: right;margin : 15px;">Add Cource Enquiry</a>
+    </div>
+    <table class=" table table-bordered table-striped ">
+        <thead>
+            <tr>
+                <th>Course Enquiry ID</th>
+                <th>Description</th>
+                <th>EnquiryDate</th>
+                <th>CourseId</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cenquiry of cenquiryService.cenquiries | filter: filter| paginate: {itemsPerPage: 3, currentPage: page} ">
+                <td (click)="populateForm(cenquiry) ">{{cenquiry.CourseEnquiryId}}</td>
+                <td (click)="populateForm(cenquiry) ">{{cenquiry.Description}}</td>
+                <td (click)="populateForm(cenquiry) ">{{cenquiry.EnquiryDate | date:'dd-MM-yyyy'}}</td>
+                <td (click)="populateForm(cenquiry) ">{{cenquiry.CourseId}}</td>
+                <td (click)="populateForm(cenquiry) ">{{cenquiry.Email}}</td>
+                <td>
+                    <button class="btn btn-sm btn-info" (click)="updateCEnquiry(cenquiry.CourseEnquiryId)">update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer ">
+        <!--Pagination-->
+        <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+    </div>
+</div>

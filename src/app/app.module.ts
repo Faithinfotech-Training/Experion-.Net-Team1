@@ -24,6 +24,16 @@ import { CordinatorComponent } from './cordinator/cordinator.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './courses/course/course.component';
 import { CourseListComponent } from './courses/course-list/course-list.component';
+import { CenquiriesComponent } from './cenquiries/cenquiries.component';
+import { CenquiryComponent } from './cenquiries/cenquiry/cenquiry.component';
+import { CenquiryListComponent } from './cenquiries/cenquiry-list/cenquiry-list.component';
+import { UpdatecenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
+import { CenquiryService } from './shared/cenquiry.service';
+import { RenquiriesComponent } from './renquiries/renquiries.component';
+import { RenquiryComponent } from './renquiries/renquiry/renquiry.component';
+import { RenquiryListComponent } from './renquiries/renquiry-list/renquiry-list.component';
+import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenquiry.component';
+import { RenquiryService } from './shared/renquiry.service';
 
 
 @NgModule({
@@ -39,7 +49,15 @@ import { CourseListComponent } from './courses/course-list/course-list.component
     CordinatorComponent,
     CoursesComponent,
     CourseComponent,
-    CourseListComponent
+    CourseListComponent,
+    CenquiriesComponent,
+    CenquiryComponent,
+    CenquiryListComponent,
+    UpdatecenquiryComponent,
+    RenquiriesComponent,
+    RenquiryComponent,
+    RenquiryListComponent,
+    UpdaterenquiryComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +70,7 @@ import { CourseListComponent } from './courses/course-list/course-list.component
     Ng2SearchPipeModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService,AuthGuard,ResourceService,
+  providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,ResourceService,
   {
     provide: HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,
