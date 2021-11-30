@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Course } from './course';
+import {Qualification} from './qualification';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,18 @@ export class CourseService {
 
   //create an instance of course
   formData:Course=new Course();
-  
+  qualifications:Qualification[];
   courses: Course[];
 
 
   constructor(private httpClient: HttpClient) { }
 
 
+  BindCmdQualification(){
+    this.httpClient.get(environment.apiUrl+"/api/course/GetQualifications")
+    .toPromise().then(response=>
+      this.qualifications=response as Qualification[]);
+  }
 
   //insert Course
   insertCourse(course:Course):Observable<any>{

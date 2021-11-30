@@ -1,4 +1,10 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Renquiry } from 'src/app/shared/renquiry';
+import { RenquiryService } from 'src/app/shared/renquiry.service';
 
 @Component({
   selector: 'app-renquiry',
