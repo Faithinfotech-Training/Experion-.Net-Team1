@@ -42,7 +42,7 @@ const routes: Routes = [
   {path:'Cenquiry',component:CenquiryComponent},
   {path:'CenquiryList',component:CenquiryListComponent},
   {path:'UpdateCenquiry',component:UpdatecenquiryComponent},
-  {path:'cenquiry/:CEnquiryId',component:CenquiryComponent}
+  {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
   {path:'Renquiries',component:RenquiriesComponent},
   {path:'Renquiry',component:RenquiryComponent},
   {path:'UpdateRenquiry',component:UpdaterenquiryComponent},
