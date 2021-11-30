@@ -86,4 +86,6 @@ export class RenquiryComponent implements OnInit {
     );
     window.location.reload();
   }
+
+  
 }
