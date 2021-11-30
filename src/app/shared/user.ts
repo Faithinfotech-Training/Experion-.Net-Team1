@@ -5,6 +5,8 @@ export class User{
     UserName:string;
     UserPassword:string;
     RoleId:number;
-    Role:Role;
+    //Role:Role;
+    UserContact:string;
+    UserEmail:string;
     isActive:boolean;
 }

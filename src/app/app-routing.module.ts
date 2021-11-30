@@ -20,6 +20,7 @@ import { RenquiriesComponent } from './renquiries/renquiries.component';
 import { RenquiryListComponent } from './renquiries/renquiry-list/renquiry-list.component';
 import { RenquiryComponent } from './renquiries/renquiry/renquiry.component';
 import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenquiry.component';
+import { CordinatorComponent } from './cordinator/cordinator.component';
 
 const routes: Routes = [
 
@@ -33,12 +34,13 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'admin', component: AdminComponent, canActivate:[AuthGuard],data:{role:'1'}},
   {path:'manager', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'2'}},
+  {path:'cordinator', component: CordinatorComponent,canActivate:[AuthGuard],data:{role:'3'}},
+  //{path:'user', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'4'}},
   {path:'courses',component:CoursesComponent},
   {path:'course', component: CourseComponent},
   {path:'courselist',component: CourseListComponent},
   {path:'course/:corId', component: CourseComponent},
   {path:'courselist/course',component: CourseComponent},
-
   {path:'Cenquiries',component:CenquiriesComponent},
   {path:'Cenquiry',component:CenquiryComponent},
   {path:'CenquiryList',component:CenquiryListComponent},
@@ -47,21 +49,15 @@ const routes: Routes = [
   {path:'Renquiries',component:RenquiriesComponent},
   {path:'Renquiry',component:RenquiryComponent},
   {path:'UpdateRenquiry',component:UpdaterenquiryComponent},
-
   {path:'cenquiries',component:CenquiriesComponent},
   {path:'cenquiry',component:CenquiryComponent},
-
-
   {path:'cenquirylist',component:CenquiryListComponent},
   {path:'updatecenquiry',component:UpdatecenquiryComponent},
   {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
   {path:'renquiries',component:RenquiriesComponent},
   {path:'renquiry',component:RenquiryComponent},
   {path:'updaterenquiry',component:UpdaterenquiryComponent},
-
   {path:'renquiry/:REnquiryId',component:RenquiryComponent},
-
-
   {path:'cenquiryList',component:CenquiryListComponent},
   {path:'updateCenquiry',component:UpdatecenquiryComponent},
   {path:'cenquiry/:cenquiryId',component:CenquiryComponent},

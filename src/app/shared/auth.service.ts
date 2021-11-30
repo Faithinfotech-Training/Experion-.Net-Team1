@@ -17,7 +17,7 @@ export class AuthService {
   getUserByPassword(user:User):Observable<any>{
     console.log(user.UserName);
     console.log(user.UserPassword);
-    return this.httpClient.get(environment.apiUrl+"/api/login/getuser/"+user.UserName+"/"+user.UserPassword);
+    return this.httpClient.get(environment.apiUrl+"/api/user/getuser/"+user.UserName+"/"+user.UserPassword);
   }
 
     //Authorize retun token with roleId and username
