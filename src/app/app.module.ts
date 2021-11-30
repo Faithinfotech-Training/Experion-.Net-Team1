@@ -34,6 +34,9 @@ import { RenquiryComponent } from './renquiries/renquiry/renquiry.component';
 import { RenquiryListComponent } from './renquiries/renquiry-list/renquiry-list.component';
 import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenquiry.component';
 import { RenquiryService } from './shared/renquiry.service';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user/user.component';
+import { UserListComponent } from './users/user-list/user-list.component';
 
 
 @NgModule({
@@ -57,7 +60,10 @@ import { RenquiryService } from './shared/renquiry.service';
     RenquiriesComponent,
     RenquiryComponent,
     RenquiryListComponent,
-    UpdaterenquiryComponent
+    UpdaterenquiryComponent,
+    UsersComponent,
+    UserComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

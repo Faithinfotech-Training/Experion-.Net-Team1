@@ -80,12 +80,20 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl('/manager');
         }
         else if (this.jwtResponse.rId === 3) {
-          //logged as receptionist
-          console.log("RECEPTIONIST");
+          //logged as cordinator
+          console.log("Cordinator");
           localStorage.setItem("username", this.jwtResponse.uName);
           localStorage.setItem("ACCESS_ROLE", this.jwtResponse.rId.toString());
           sessionStorage.setItem("username", this.jwtResponse.uName);
-          this.router.navigateByUrl('/employee');
+          this.router.navigateByUrl('/cordinator');
+        }
+        else if (this.jwtResponse.rId === 4) {
+          //logged as user
+          console.log("USER");
+          localStorage.setItem("username", this.jwtResponse.uName);
+          localStorage.setItem("ACCESS_ROLE", this.jwtResponse.rId.toString());
+          sessionStorage.setItem("username", this.jwtResponse.uName);
+          this.router.navigateByUrl('');
         }
           else {
             this.error = "sorry not allowed...Invalid authorization"

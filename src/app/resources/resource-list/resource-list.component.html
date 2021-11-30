@@ -22,7 +22,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let resouce of resourceService.resources | filter:filter | paginate:{itemsPerPage:3 , currentPage:page}">
+            <tr *ngFor="let resouce of resourceService.resources | filter:filter | paginate:{itemsPerPage:5 , currentPage:page}">
+                <ng-container *ngIf= "resouce.IsAvailable == true">
                 <td (click)="populateForm(resouce)">{{resouce.ResourceId}}</td>
                 <td (click)="populateForm(resouce)">{{resouce.ResourceName}}</td>
                 <td (click)="populateForm(resouce)">{{resouce.ResourceDescription}}</td>
@@ -33,6 +34,7 @@
                     <button (click)="updateResource(resouce.ResourceId)" class="btn btn-info" style="margin-left: 10px;" >Edit</button>&nbsp;
 
                 </td>
+                </ng-container>
             </tr>
 
         </tbody>
