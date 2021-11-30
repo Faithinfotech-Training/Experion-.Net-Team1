@@ -24,6 +24,10 @@ import { CordinatorComponent } from './cordinator/cordinator.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './courses/course/course.component';
 import { CourseListComponent } from './courses/course-list/course-list.component';
+import { CenquiriesComponent } from './cenquiries/cenquiries.component';
+import { CenquiryComponent } from './cenquiries/cenquiry/cenquiry.component';
+import { CenquiryListComponent } from './cenquiries/cenquiry-list/cenquiry-list.component';
+import { UpdatecenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
 
 
 @NgModule({
@@ -39,7 +43,11 @@ import { CourseListComponent } from './courses/course-list/course-list.component
     CordinatorComponent,
     CoursesComponent,
     CourseComponent,
-    CourseListComponent
+    CourseListComponent,
+    CenquiriesComponent,
+    CenquiryComponent,
+    CenquiryListComponent,
+    UpdatecenquiryComponent
   ],
   imports: [
     BrowserModule,
