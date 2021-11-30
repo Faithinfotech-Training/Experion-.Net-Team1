@@ -23,7 +23,7 @@ import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenqu
 
 const routes: Routes = [
 
-  {path:'', redirectTo:"/login",pathMatch: 'full'},
+  {path:'', redirectTo:"/home",pathMatch: 'full'},
   {path:'resource', component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resources',component:ResourcesComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resourcelist',component: ResourceListComponent},
@@ -40,7 +40,6 @@ const routes: Routes = [
   {path:'courselist/course',component: CourseComponent},
   {path:'cenquiries',component:CenquiriesComponent},
   {path:'cenquiry',component:CenquiryComponent},
-<<<<<<< HEAD
   {path:'cenquirylist',component:CenquiryListComponent},
   {path:'updatecenquiry',component:UpdatecenquiryComponent},
   {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
@@ -48,7 +47,6 @@ const routes: Routes = [
   {path:'renquiry',component:RenquiryComponent},
   {path:'updaterenquiry',component:UpdaterenquiryComponent},
   {path:'renquiry/:REnquiryId',component:RenquiryComponent},
-=======
   {path:'cenquiryList',component:CenquiryListComponent},
   {path:'updateCenquiry',component:UpdatecenquiryComponent},
   {path:'cenquiry/:cenquiryId',component:CenquiryComponent},
@@ -56,7 +54,6 @@ const routes: Routes = [
   {path:'renquiry',component:RenquiryComponent},
   {path:'updateRenquiry',component:UpdaterenquiryComponent},
   {path:'renquiry/:renquiryId',component:RenquiryComponent},
->>>>>>> e6614242183aa7595612a2fdfa3d631ad90a63d3
   {path:'renquirylist',component:RenquiryListComponent}
 
 
