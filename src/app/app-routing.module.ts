@@ -15,12 +15,10 @@ import {AuthGuard} from './shared/auth.guard';
 const routes: Routes = [
 
   {path:'', redirectTo:"/login",pathMatch: 'full'},
-  //{path:'post', component: PostComponent},
-  {path:'resource', component: ResourceComponent},
-  {path:'resources',component:ResourcesComponent},
+  {path:'resource', component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'resources',component:ResourcesComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resourcelist',component: ResourceListComponent},
-  //{path:'postlist',component: PostListComponent},
-  {path:'resource/:resourceId', component: ResourceComponent},
+  {path:'resource/:resourceId', component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resourcelist/resource',component: ResourceComponent},
   {path:'home', component: HomeComponent},
   {path:'login', component: LoginComponent},

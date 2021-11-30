@@ -5,23 +5,39 @@
         </h5>
     </div>
  
-  
-    <nav>
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#" routerlink='[./resource]'>Resource management</a>
-             </li>
-               
-             <li class="nav-item">
-                <a class="nav-link" href="#" routerlink='../reports'>Course Management</a>
-             </li>
-
-             <li class="nav-item">
-                <a class="nav-link" href="#" (click)="logout()">Logout</a>
-             </li>
-        </ul>
-    </nav>
-
+    <div class="banner">
+        <div class="menu-bar">
+          <h1 class="logo"><span></span></h1>
+          <ul>
+            <!--<li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>-->
+            <li><a class="nav-link"  [routerLink]="['../courses']">Courses </a>
+    
+                <div class="dropdown-menu">
+                    <ul>
+                      <li><a [routerLink]="['../course']">Add Course</a></li>
+                      <li><a [routerLink]="['../courselist']">View Course</a></li>
+                      <li><a href="#"></a></li>
+                    </ul>
+                  </div>
+            </li>
+            <li><a class="nav-link" [routerLink]="['../resources']">Resources</a>
+                <div class="dropdown-menu">
+                    <ul>
+                      <li><a [routerLink]="['../resource']">Add Resource</a></li>
+                      <li><a [routerLink]="['../resourcelist']">View Resource</a></li>
+                    </ul>
+                  </div>
+            </li>
+            <!--<li><a href="#">About Us</a></li>
+            <li><a href="#">Contact us</a></li>
+              <li><a [routerLink]="['/login']">Sign In</a></li>-->
+              <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+    
+        
+          </div>
     
 
 
