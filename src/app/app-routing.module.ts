@@ -11,6 +11,10 @@ import { ResourceListComponent } from './resources/resource-list/resource-list.c
 import { ResourceComponent } from './resources/resource/resource.component';
 import { ResourcesComponent } from './resources/resources.component';
 import {AuthGuard} from './shared/auth.guard';
+import { CenquiriesComponent } from './cenquiries/cenquiries.component';
+import { CenquiryListComponent } from './cenquiries/cenquiry-list/cenquiry-list.component';
+import { CenquiryComponent } from './cenquiries/cenquiry/cenquiry.component';
+import { UpdateenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
 
 const routes: Routes = [
 
@@ -30,7 +34,12 @@ const routes: Routes = [
   {path:'course', component: CourseComponent},
   {path:'courselist',component: CourseListComponent},
   {path:'course/:corId', component: CourseComponent},
-  {path:'courselist/course',component: CourseComponent}
+  {path:'courselist/course',component: CourseComponent},
+  {path:'Cenquiries',component:CenquiriesComponent},
+  {path:'Cenquiry',component:CenquiryComponent},
+  {path:'CenquiryList',component:CenquiryListComponent},
+  {path:'UpdateCenquiry',component:UpdateenquiryComponent},
+  {path:'cenquiry/:CEnquiryId',component:CenquiryComponent}
  
 
 

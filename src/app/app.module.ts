@@ -28,6 +28,7 @@ import { CenquiriesComponent } from './cenquiries/cenquiries.component';
 import { CenquiryComponent } from './cenquiries/cenquiry/cenquiry.component';
 import { CenquiryListComponent } from './cenquiries/cenquiry-list/cenquiry-list.component';
 import { UpdatecenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
+import { CenquiryService } from './shared/cenquiry.service';
 
 
 @NgModule({
@@ -60,7 +61,7 @@ import { UpdatecenquiryComponent } from './cenquiries/updatecenquiry/updatecenqu
     Ng2SearchPipeModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService,AuthGuard,ResourceService,
+  providers: [AuthService,AuthGuard,CenquiryService,ResourceService,
   {
     provide: HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,
