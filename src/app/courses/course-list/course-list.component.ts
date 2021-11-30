@@ -26,6 +26,26 @@ filter:string;
    
   }
 
+  deleteCourse(res: Course) {
+    console.log(res);
+    console.log(res.CourseName);
+    var value = confirm("Are you sure to delete " + res.CourseName + " ?")
+    if (value) {
+      console.log("Deleting a record!!");
+      res.IsAvailable = false;
+      console.log(res);
+      this.courseService.updateCourse(res).subscribe(
+        (result) => {
+          console.log(result);
+          this.courseService.bindListCourses();
+        });
+      this.toastrService.warning(res.CourseName + " deleted!", 'Training App');
+    }
+    else {
+      //this.toastrService.info("Employee " + id + " deleted!", 'TrainingApp');
+    }
+  }
+
 //update a course
 updateCourse(corId:number)
 {

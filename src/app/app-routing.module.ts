@@ -38,6 +38,7 @@ const routes: Routes = [
   {path:'courselist',component: CourseListComponent},
   {path:'course/:corId', component: CourseComponent},
   {path:'courselist/course',component: CourseComponent},
+
   {path:'Cenquiries',component:CenquiriesComponent},
   {path:'Cenquiry',component:CenquiryComponent},
   {path:'CenquiryList',component:CenquiryListComponent},
@@ -46,7 +47,27 @@ const routes: Routes = [
   {path:'Renquiries',component:RenquiriesComponent},
   {path:'Renquiry',component:RenquiryComponent},
   {path:'UpdateRenquiry',component:UpdaterenquiryComponent},
+
+  {path:'cenquiries',component:CenquiriesComponent},
+  {path:'cenquiry',component:CenquiryComponent},
+
+  {path:'cenquirylist',component:CenquiryListComponent},
+  {path:'updatecenquiry',component:UpdatecenquiryComponent},
+  {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
+  {path:'renquiries',component:RenquiriesComponent},
+  {path:'renquiry',component:RenquiryComponent},
+  {path:'updaterenquiry',component:UpdaterenquiryComponent},
+
   {path:'renquiry/:REnquiryId',component:RenquiryComponent},
+
+  {path:'cenquiryList',component:CenquiryListComponent},
+  {path:'updateCenquiry',component:UpdatecenquiryComponent},
+  {path:'cenquiry/:cenquiryId',component:CenquiryComponent},
+  {path:'renquiries',component:RenquiriesComponent},
+  {path:'renquiry',component:RenquiryComponent},
+  {path:'updateRenquiry',component:UpdaterenquiryComponent},
+  {path:'renquiry/:renquiryId',component:RenquiryComponent},
+
   {path:'renquirylist',component:RenquiryListComponent}
 
 

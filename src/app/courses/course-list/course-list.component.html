@@ -27,7 +27,7 @@
              <td (click)="populateForm(crs)">{{crs.CoursePrice}}</td>
              <td (click)="populateForm(crs)">{{crs.CourseDescription}}</td>
              <td>
-                 <button class="btn btn-sm btn-outline-danger"
+                 <button (click)="deleteCourse(crs)"class="btn btn-sm btn-outline-danger"
                  >X</button>&nbsp;
                  <button (click)="updateCourse(crs.CourseId)"  class="btn btn-info" style="margin-left: 10px;">Edit</button>
                  

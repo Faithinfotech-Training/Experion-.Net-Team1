@@ -18,7 +18,7 @@ export class CourseComponent implements OnInit {
         private route:ActivatedRoute) { }
     
       ngOnInit(): void {
-      
+        this.corservice.BindCmdQualification();
     
       this.corId=this.route.snapshot.params['corId'];
      

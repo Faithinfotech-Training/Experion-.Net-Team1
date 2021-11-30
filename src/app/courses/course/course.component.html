@@ -24,6 +24,24 @@
 
 
     </div>
+    
+    <!--qualification dropdown-->
+<div class="form-group">
+    <label class="col-md-4">Qualification</label>
+    <select name="QualificationId" id="QualificationId" class="form-control" #QualificationId="ngModel" required
+        [(ngModel)]="corservice.formData.QualificationId">
+        <option value=0 disabled>Choose Qualification</option>
+        <option *ngFor="let cat of corservice.qualifications" 
+        value="{{cat.QualificationId}}">{{cat.QualificationName}}</option>
+        
+    </select>
+    <div class="validation-error" *ngIf="QualificationId.touched&&QualificationId.invalid">
+
+        <div *ngIf="QualificationId.errors.required">Qualification is required</div>
+
+    </div>
+
+</div>
 
     <!--IsPublic-->
 
