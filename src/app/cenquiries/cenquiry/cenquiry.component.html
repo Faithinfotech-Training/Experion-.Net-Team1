@@ -1,6 +1,10 @@
 <form name="cenquiryform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
     <!--Course Enquiry Id-->
+
     <div class="form-group">
+
+    <input type="text" name="CourseEnquiryId" [(ngModel)]="cenquiryService.formData.CourseEnquiryId" />
+    <!--<div class="form-group">
         <label><b>Course Enquiry Id:</b></label>
         <input type="hidden" name="CourseEnquiryId" #CourseEnquiryId="ngModel" [ngModel]="cenquiryService.formData.CourseEnquiryId" class="form-control" placeholder="Enter Course Enquiry Id" [ngClass]="{'is-invalid':CourseEnquiryId.touched && CourseEnquiryId.invalid}" />
         <div class="validation-error" *ngIf="CourseEnquiryId.touched && CourseEnquiryId.invalid">
@@ -11,7 +15,7 @@
     <input type="hidden" name="AdminReply" [(ngModel)]="cenquiryService.formData.AdminReply" />
     <input type="hidden" name="AdminReplyDate" [(ngModel)]="cenquiryService.formData.AdminReplyDate" />
     <input type="hidden" name="IsActive" [(ngModel)]="cenquiryService.formData.IsActive" />
-    <input type="hidden" name="StatusId" [(ngModel)]="cenquiryService.formData.StatusId" />
+    <input type="hidden" name="StatusId" [(ngModel)]="cenquiryService.formData.StatusId" />-->
     <!--Enquirer name-->
     <div class="form-group">
 
@@ -86,4 +90,6 @@
     <div class="form-group">
         <button type="submit" [disabled]="!(form.valid && form.dirty)" class="btn btn-lg btn-primary form-control">Submit</button>
     </div>
+
+</div>
 </form>

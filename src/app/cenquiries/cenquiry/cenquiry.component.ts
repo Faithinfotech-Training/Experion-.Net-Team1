@@ -89,6 +89,7 @@ export class CenquiryComponent implements OnInit {
       (result) => {
         console.log(result);
         this.resetForm(form);
+
         this.toastrService.success("Course Enquiry record has been inserted", "CRM");
 
       }
@@ -103,6 +104,9 @@ export class CenquiryComponent implements OnInit {
         console.log(result);
         this.resetForm(form);
         this.toastrService.success("Course Enquiry record has been updated", "CRM");
+
+       // this.toastrService.success("Course Enquiry record has been updated","CRM");
+
         this.cenquiryService.bindListCEnquiry();
       }
     );

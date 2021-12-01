@@ -21,9 +21,9 @@ export class RenquiryComponent implements OnInit {
     this.REnquiryId=this.route.snapshot.params['REnquiryId'];
 
     this.renquiryService.bindListREnquiry();
+
    if(this.REnquiryId!=0 || (this.REnquiryId!=null))
    {
-
     this.renquiryService.getREnquiry(this.REnquiryId).subscribe(
       data=>{console.log(data);
        var datePipe= new DatePipe("en-UK");
