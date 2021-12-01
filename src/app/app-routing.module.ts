@@ -21,53 +21,37 @@ import { RenquiryListComponent } from './renquiries/renquiry-list/renquiry-list.
 import { RenquiryComponent } from './renquiries/renquiry/renquiry.component';
 import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenquiry.component';
 import { CordinatorComponent } from './cordinator/cordinator.component';
+import { UserComponent } from './users/user/user.component';
 
 const routes: Routes = [
 
-  {path:'', redirectTo:"/home",pathMatch: 'full'},
+  {path:'', redirectTo:"/login",pathMatch: 'full'},
   {path:'resource', component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resources',component:ResourcesComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resourcelist',component: ResourceListComponent},
   {path:'resource/:resourceId', component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resourcelist/resource',component: ResourceComponent},
-  {path:'home', component: HomeComponent},
-  {path:'login', component: LoginComponent},
-  {path:'admin', component: AdminComponent, canActivate:[AuthGuard],data:{role:'1'}},
-  {path:'manager', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'2'}},
-  {path:'cordinator', component: CordinatorComponent,canActivate:[AuthGuard],data:{role:'3'}},
-  //{path:'user', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'4'}},
   {path:'courses',component:CoursesComponent},
   {path:'course', component: CourseComponent},
   {path:'courselist',component: CourseListComponent},
   {path:'course/:corId', component: CourseComponent},
   {path:'courselist/course',component: CourseComponent},
-  {path:'Cenquiries',component:CenquiriesComponent},
-  {path:'Cenquiry',component:CenquiryComponent},
-  {path:'CenquiryList',component:CenquiryListComponent},
-  {path:'UpdateCenquiry',component:UpdatecenquiryComponent},
-  {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
-  {path:'Renquiries',component:RenquiriesComponent},
-  {path:'Renquiry',component:RenquiryComponent},
-  {path:'UpdateRenquiry',component:UpdaterenquiryComponent},
+  {path:'home', component: HomeComponent},
+  {path:'login', component: LoginComponent},
+  {path:'admin', component: AdminComponent, canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'manager', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'2'}},
+  {path:'cordinator', component: CordinatorComponent,canActivate:[AuthGuard],data:{role:'3'}},
+  {path:'user', component: UserComponent}, //registration
   {path:'cenquiries',component:CenquiriesComponent},
   {path:'cenquiry',component:CenquiryComponent},
   {path:'cenquirylist',component:CenquiryListComponent},
   {path:'updatecenquiry',component:UpdatecenquiryComponent},
-  {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
-  {path:'renquiries',component:RenquiriesComponent},
-  {path:'renquiry',component:RenquiryComponent},
-  {path:'updaterenquiry',component:UpdaterenquiryComponent},
-  {path:'renquiry/:REnquiryId',component:RenquiryComponent},
-  {path:'cenquiryList',component:CenquiryListComponent},
-  {path:'updateCenquiry',component:UpdatecenquiryComponent},
   {path:'cenquiry/:cenquiryId',component:CenquiryComponent},
   {path:'renquiries',component:RenquiriesComponent},
   {path:'renquiry',component:RenquiryComponent},
-  {path:'updateRenquiry',component:UpdaterenquiryComponent},
+  {path:'updaterenquiry',component:UpdaterenquiryComponent},
+  {path:'updatecenquiry',component:UpdatecenquiryComponent},
   {path:'renquiry/:renquiryId',component:RenquiryComponent},
-
-
-
   {path:'renquirylist',component:RenquiryListComponent}
 
 

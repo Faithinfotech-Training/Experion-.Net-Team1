@@ -3,6 +3,7 @@ import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { Cenquiry } from 'src/app/shared/cenquiry';
 import { CenquiryService } from 'src/app/shared/cenquiry.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cenquiry-list',
@@ -14,7 +15,7 @@ export class CenquiryListComponent implements OnInit {
   page: number=1;
   filter: string;
   
-    constructor(public cenquiryService:CenquiryService, private router:Router) { }
+    constructor(public cenquiryService:CenquiryService,private toastrService:ToastrService, private router:Router) { }
   
     ngOnInit(): void {
       //get all course enquiry through service
@@ -30,11 +31,31 @@ export class CenquiryListComponent implements OnInit {
       cenquiry.EnquiryDate=formatedDate;
       this.cenquiryService.formData=Object.assign({},cenquiry);
     }
+
+    deleteEnquiry(res: Cenquiry) {
+      console.log(res);
+     // console.log(res.CourseName);
+      var value = confirm("Are you sure to delete ?");
+      if (value) {
+        console.log("Deleting a record!!");
+        res.IsActive = false;
+        console.log(res);
+        this.cenquiryService.updateCEnquiry(res).subscribe(
+          (result) => {
+            console.log(result);
+            this.cenquiryService.bindListCEnquiry();
+          });
+        this.toastrService.warning("Enquiry deleted!", 'Training App');
+      }
+      else {
+        //this.toastrService.info("Employee " + id + " deleted!", 'TrainingApp');
+      }
+    }
    
       //update course enquiry
       updateCEnquiry(CEnquiryId: number)
     {
-      console.log(CEnquiryId);
+      //console.log("Check",CEnquiryId);
       this.router.navigate(['cenquiry',CEnquiryId]);
     }
   }

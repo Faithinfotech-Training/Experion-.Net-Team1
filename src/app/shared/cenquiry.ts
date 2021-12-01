@@ -1,7 +1,13 @@
 export class Cenquiry {
-    CourseEnquiryId:number;
+    CourseEnquiryId:number=0;
     Description:string='';
     EnquiryDate:Date=new Date;
     CourseId:number;
     Email:string='';
+    AdminReply:string;
+    AdminReplyDate:string;
+    IsActive:boolean;
+    StatusId:number;
+    QualficationId:number;
+    EnquirerName:string;
 }

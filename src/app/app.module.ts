@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';;
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ResourceService} from './shared/resource.service';
+import {UserService} from './shared/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -37,6 +38,7 @@ import { RenquiryService } from './shared/renquiry.service';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { UserListComponent } from './users/user-list/user-list.component';
+import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.component';
 
 
 @NgModule({
@@ -63,7 +65,8 @@ import { UserListComponent } from './users/user-list/user-list.component';
     UpdaterenquiryComponent,
     UsersComponent,
     UserComponent,
-    UserListComponent
+    UserListComponent,
+    CenquiryEditComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,7 @@ import { UserListComponent } from './users/user-list/user-list.component';
     Ng2SearchPipeModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,ResourceService,
+  providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,UserService,ResourceService,
   {
     provide: HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,
