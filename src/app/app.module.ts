@@ -42,19 +42,19 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { AboutComponent } from './about/about.component';
 
 import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.component';
-<<<<<<< HEAD
+
 import { RenquiryEditComponent } from './renquiries/renquiry-edit/renquiry-edit.component';
 import { CenquiryStatusComponent } from './cenquiries/cenquiry-status/cenquiry-status.component';
 import { RenquiryStatusComponent } from './renquiries/renquiry-status/renquiry-status.component';
 import { CenquiryNewComponent } from './cenquiries/cenquiry-new/cenquiry-new.component';
 import { RenquiryNewComponent } from './renquiries/renquiry-new/renquiry-new.component';
 import  {PagevisitService} from './shared/pagevist.service';
-=======
+
 import { UsercourselistComponent } from './usercourselist/usercourselist.component';
 import { UserresourcelistComponent } from './userresourcelist/userresourcelist.component';
 
 
->>>>>>> ef3abde1804e2cd148e2cb063299a4d58f33f1eb
+
 
 
 @NgModule({
@@ -82,20 +82,19 @@ import { UserresourcelistComponent } from './userresourcelist/userresourcelist.c
     UsersComponent,
     UserComponent,
     UserListComponent,
-<<<<<<< HEAD
+
     CenquiryEditComponent,
     RenquiryEditComponent,
     CenquiryStatusComponent,
     RenquiryStatusComponent,
     CenquiryNewComponent,
-    RenquiryNewComponent
-=======
+    RenquiryNewComponent,
     AboutComponent,
     CenquiryEditComponent,
     UsercourselistComponent,
     UserresourcelistComponent
 
->>>>>>> ef3abde1804e2cd148e2cb063299a4d58f33f1eb
+
   ],
   imports: [
     BrowserModule,
@@ -110,21 +109,16 @@ import { UserresourcelistComponent } from './userresourcelist/userresourcelist.c
 
 
   ],
-<<<<<<< HEAD
+
   providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,PagevisitService,UserService,ResourceService,
   {
     provide: HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,
     multi:true
   }],
-=======
-  providers: [AuthService, AuthGuard, CenquiryService, RenquiryService, UserService, ResourceService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }],
->>>>>>> ef3abde1804e2cd148e2cb063299a4d58f33f1eb
+
+ 
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

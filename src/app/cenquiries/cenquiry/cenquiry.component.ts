@@ -15,7 +15,7 @@ export class CenquiryComponent implements OnInit {
 
   CEnquiryId: number;
   cenquiry: Cenquiry = new Cenquiry();
-
+  CourseId:number;
   constructor(public cenquiryService: CenquiryService, private route: ActivatedRoute, 
     private router: Router,
     private toastrService: ToastrService) { }
@@ -25,23 +25,12 @@ export class CenquiryComponent implements OnInit {
   ngOnInit(): void {
     this.cenquiryService.BindCmdQualification();
     this.cenquiryService.bindListCEnquiry();
-
+    this.CourseId=this.route.snapshot.params['courseId'];
+    console.log(this.CourseId);
+    this.cenquiryService.formData.CourseId=this.CourseId;
     this.CEnquiryId = this.route.snapshot.params['CEnquiryId'];
     this.resetForm();
-    /*
-    if (this.CEnquiryId != 0 || this.CEnquiryId != null) {
-      console.log("in course",this.CEnquiryId);
-      this.cenquiryService.getCEnquiry(this.CEnquiryId).subscribe(
-        (data:any): void => {
-          console.log(data);
-          var datePipe = new DatePipe("en-UK");
-          let formatedDate: any = datePipe.transform(data.EnquiryDate, 'yyyy-MM-dd');
-          data.EnquiryDate = formatedDate
-          this.cenquiryService.formData = Object.assign({}, data);
-        },
-        error => console.log(error)
-      );
-    }*/
+    
 
   }
 
@@ -98,20 +87,6 @@ export class CenquiryComponent implements OnInit {
     window.location.reload();
   }
 
-  /*defining update record
-  updateCEnquiryRecord(form?: NgForm) {
-    this.cenquiryService.updateCEnquiry(form.value).subscribe(
-      (result) => {
-        console.log(result);
-        this.resetForm(form);
-        this.toastrService.success("Course Enquiry record has been updated", "CRM");
-
-       // this.toastrService.success("Course Enquiry record has been updated","CRM");
-
-        this.cenquiryService.bindListCEnquiry();
-      }
-    );
-    window.location.reload();
-  }*/
+  
 }
 
