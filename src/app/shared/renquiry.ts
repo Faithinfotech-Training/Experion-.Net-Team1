@@ -4,4 +4,10 @@ export class Renquiry {
     EnquiryDate:Date=new Date;
     ResourceId:number;
     Email:string=''; 
+    AdminReply:string;
+    AdminReplyDate:string;
+    IsActive:boolean;
+    StatusId:number;
+    QualificationId:number;
+    EnquirerName:string;
 }

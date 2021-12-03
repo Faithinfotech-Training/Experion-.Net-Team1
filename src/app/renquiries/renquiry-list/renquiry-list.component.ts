@@ -3,6 +3,7 @@ import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { Renquiry } from 'src/app/shared/renquiry';
 import { RenquiryService } from 'src/app/shared/renquiry.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-renquiry-list',
@@ -14,7 +15,8 @@ export class RenquiryListComponent implements OnInit {
   page: number=1;
   filter: string;
   
-    constructor(public renquiryService:RenquiryService,private router:Router) { }
+    constructor(public renquiryService:RenquiryService,private router:Router,
+      private toastrService: ToastrService) { }
   
     ngOnInit(): void {
       this.renquiryService.bindListREnquiry();
@@ -29,12 +31,42 @@ export class RenquiryListComponent implements OnInit {
       renquiry.EnquiryDate=formatedDate;
       this.renquiryService.formData=Object.assign({},renquiry);
     }
+
+    deleteEnquiry(res: Renquiry) {
+      console.log(res);
+      // console.log(res.CourseName);
+      var value = confirm("Are you sure to delete ?");
+      if (value) {
+        console.log("Deleting a record!!");
+        res.IsActive = false;
+        console.log(res);
+        this.renquiryService.updateREnquiry(res).subscribe(
+          (result) => {
+            console.log(result);
+            this.renquiryService.bindListREnquiry();
+          });
+        this.toastrService.warning("Enquiry deleted!", 'Training App');
+      }
+      else {
+        //this.toastrService.info("Employee " + id + " deleted!", 'TrainingApp');
+      }
+    }
+  
    
       //update resource enquiry
-      updateREnquiry(REnquiryId: number)
+      updateREnquiry(REnquiryId: number,res:Renquiry)
     {
       console.log(REnquiryId);
-      this.router.navigate(['renquiry',REnquiryId]);
+      res.IsActive = false;
+    console.log(res);
+    this.renquiryService.updateREnquiry(res).subscribe(
+      (result) => {
+        console.log(result);
+        this.renquiryService.bindListREnquiry();
+      });
+      //this.router.navigate(['renquiry',{REnquiryId}]);
+      //this.router.navigateByUrl('/renquiryedit;RenquiryId');
+      this.router.navigate(['renquiryedit',{REnquiryId}]);
     }
   }
   

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Cenquiry } from 'src/app/shared/cenquiry';
 import { CenquiryService } from 'src/app/shared/cenquiry.service';
 import { ToastrService } from 'ngx-toastr';
@@ -53,9 +53,19 @@ export class CenquiryListComponent implements OnInit {
 
   //update course enquiry
 
-  updateCEnquiry(CEnquiryId: number) {
-
-    console.log(CEnquiryId);
-    this.router.navigate(['cenquiry', CEnquiryId]);
+  updateCEnquiry(CEnquiryId: number,res: Cenquiry) {
+    res.IsActive = false;
+    console.log(res);
+    this.cenquiryService.updateCEnquiry(res).subscribe(
+      (result) => {
+        console.log(result);
+        this.cenquiryService.bindListCEnquiry();
+      });
+    //this.toastrService.warning("Enquiry deleted!", 'Training App');
+    console.log("navigating to edit",CEnquiryId);
+    //this.router.navigate(['cenquiry',{CEnquiryId}]);
+     this.router.navigate(['cenquiryedit',{CEnquiryId}]);
+    
+     //his.router.navigateByUrl('/cenquiryedit;CEnquiryId=CEnquiryId');
   }
 }

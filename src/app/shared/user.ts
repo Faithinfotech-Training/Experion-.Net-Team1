@@ -8,5 +8,5 @@ export class User{
     //Role:Role;
     UserContact:string;
     UserEmail:string;
-    isActive:boolean=true;
+    IsActive:boolean=true;
 }

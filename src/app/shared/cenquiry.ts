@@ -8,6 +8,6 @@ export class Cenquiry {
     AdminReplyDate:string;
     IsActive:boolean;
     StatusId:number;
-    QualficationId:number;
+    QualificationId:number;
     EnquirerName:string;
 }

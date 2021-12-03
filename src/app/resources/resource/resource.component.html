@@ -18,7 +18,11 @@
     <!--Resource Cost-->
     <div class="form-group">
         <label>Resource Cost</label>
+<<<<<<< HEAD
+        <input type ="number" name="ResourceCost" #ResourceCost="ngModel" [(ngModel)]="resourceService.formData.ResourceCost"
+=======
         <input type="number" name="ResourceCost" #ResourceCost="ngModel" [(ngModel)]="resourceService.formData.ResourceCost"
+>>>>>>> ef3abde1804e2cd148e2cb063299a4d58f33f1eb
             class="form-control" placeholder="Enter Resource Cost" required
             [ngClass]="{ 'is-invalid': ResourceCost.touched && ResourceCost.invalid }" />
             <!--
