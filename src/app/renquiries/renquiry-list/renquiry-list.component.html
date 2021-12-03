@@ -6,16 +6,16 @@
         <div class="form-group">
             <input class="form-control" type="text" placeholder="Search here..." [(ngModel)]="filter">
         </div>
-<<<<<<< HEAD
-        <a [routerLink]="['../renquiry']" class="btn btn-primary" style="float: right;margin : 15px;">Add Resource Enquiry</a>
-=======
-        <a [routerLink]="['/renquiry']" class="btn btn-primary" style="float: right;margin : 15px;">Add Resource Enquiry</a>
->>>>>>> a065d6019d4c71c0166ca8699221c6c40eae24ca
+        <a [routerLink]="['../renquiry']" class="btn btn-primary" style="float: right;margin : 15px;">Add Resource
+            Enquiry</a>
+
+
+
     </div>
     <table class=" table table-bordered table-striped ">
         <thead>
             <tr>
-                <th>Resource Enquiry ID</th>
+                <th>Name</th>
                 <th>Description</th>
                 <th>EnquiryDate</th>
                 <th>ResourceId</th>
@@ -23,14 +23,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let renquiry of renquiryService.renquiries | filter: filter| paginate: {itemsPerPage: 3, currentPage: page} ">
-                <td (click)="populateForm(renquiry) ">{{renquiry.ResourceEnquiryId}}</td>
+            <tr
+                *ngFor="let renquiry of renquiryService.renquiries | filter: filter| paginate: {itemsPerPage: 3, currentPage: page} ">
+                <td (click)="populateForm(renquiry) ">{{renquiry.EnquirerName}}</td>
                 <td (click)="populateForm(renquiry) ">{{renquiry.Description}}</td>
                 <td (click)="populateForm(renquiry) ">{{renquiry.EnquiryDate | date:'dd-MM-yyyy'}}</td>
                 <td (click)="populateForm(renquiry) ">{{renquiry.ResourceId}}</td>
                 <td (click)="populateForm(renquiry) ">{{renquiry.Email}}</td>
                 <td>
-                    <button class="btn btn-sm btn-info" (click)="updateREnquiry(renquiry.ResourceEnquiryId)">update</button>
+                    <button class="btn btn-sm btn-outline-danger" (click)="deleteEnquiry(renquiry)">X</button>&nbsp;
+                    <button class="btn btn-sm btn-info" (click)="updateREnquiry(renquiry.ResourceEnquiryId,renquiry)">Update</button>
                 </td>
             </tr>
         </tbody>

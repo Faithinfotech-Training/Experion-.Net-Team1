@@ -9,7 +9,7 @@ import { AuthService } from '../shared/auth.service';
 })
 export class ManagerComponent implements OnInit {
  loggedUserName:string;
- 
+ statusI:number;
   constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {
@@ -19,5 +19,11 @@ export class ManagerComponent implements OnInit {
   {
     this.authService.logout();
     this.router.navigateByUrl('login');
+  }
+  Interested(statusI){
+    this.router.navigate(['cenquirystatus',{statusI}]);
+  }
+  ResourceStatus(statusI){
+    this.router.navigate(['renquirystatus',{statusI}]);
   }
 }

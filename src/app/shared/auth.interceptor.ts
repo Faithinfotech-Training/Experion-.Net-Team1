@@ -26,14 +26,14 @@ export class AuthInterceptor implements HttpInterceptor {
           }
         })
     }
-    else{
+    /*else{
       request=request.clone(
         {
           setHeaders:{
             Authorization:`Bearer ${token}`
           }
         })
-    }
+    }*/
     return next.handle(request);
   }
 }

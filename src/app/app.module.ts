@@ -28,7 +28,7 @@ import { CourseListComponent } from './courses/course-list/course-list.component
 import { CenquiriesComponent } from './cenquiries/cenquiries.component';
 import { CenquiryComponent } from './cenquiries/cenquiry/cenquiry.component';
 import { CenquiryListComponent } from './cenquiries/cenquiry-list/cenquiry-list.component';
-import { UpdatecenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
+//import { UpdatecenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
 import { CenquiryService } from './shared/cenquiry.service';
 import { RenquiriesComponent } from './renquiries/renquiries.component';
 import { RenquiryComponent } from './renquiries/renquiry/renquiry.component';
@@ -39,6 +39,12 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.component';
+import { RenquiryEditComponent } from './renquiries/renquiry-edit/renquiry-edit.component';
+import { CenquiryStatusComponent } from './cenquiries/cenquiry-status/cenquiry-status.component';
+import { RenquiryStatusComponent } from './renquiries/renquiry-status/renquiry-status.component';
+import { CenquiryNewComponent } from './cenquiries/cenquiry-new/cenquiry-new.component';
+import { RenquiryNewComponent } from './renquiries/renquiry-new/renquiry-new.component';
+import  {PagevisitService} from './shared/pagevist.service';
 
 
 @NgModule({
@@ -58,7 +64,7 @@ import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.
     CenquiriesComponent,
     CenquiryComponent,
     CenquiryListComponent,
-    UpdatecenquiryComponent,
+    //UpdatecenquiryComponent,
     RenquiriesComponent,
     RenquiryComponent,
     RenquiryListComponent,
@@ -66,7 +72,12 @@ import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.
     UsersComponent,
     UserComponent,
     UserListComponent,
-    CenquiryEditComponent
+    CenquiryEditComponent,
+    RenquiryEditComponent,
+    CenquiryStatusComponent,
+    RenquiryStatusComponent,
+    CenquiryNewComponent,
+    RenquiryNewComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +90,7 @@ import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.
     Ng2SearchPipeModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,UserService,ResourceService,
+  providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,PagevisitService,UserService,ResourceService,
   {
     provide: HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,

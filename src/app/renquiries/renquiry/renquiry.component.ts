@@ -12,17 +12,21 @@ import { RenquiryService } from 'src/app/shared/renquiry.service';
   styleUrls: ['./renquiry.component.css']
 })
 export class RenquiryComponent implements OnInit {
+  REnquiryId:number;
+  renquiry:Renquiry = new Renquiry();
 
   constructor(public renquiryService:RenquiryService,private route:ActivatedRoute,private router:Router,
     private toastrService:ToastrService) { }
-    REnquiryId:number;
-    renquiry:Renquiry = new Renquiry();
+    
   ngOnInit(): void {
-    this.REnquiryId=this.route.snapshot.params['REnquiryId'];
-
+    this.renquiryService.BindCmdQualification();
     this.renquiryService.bindListREnquiry();
 
-   if(this.REnquiryId!=0 || (this.REnquiryId!=null))
+
+    this.REnquiryId=this.route.snapshot.params['REnquiryId'];
+    this.resetForm();
+    /*
+    if(this.REnquiryId!=0 || (this.REnquiryId!=null))
    {
     this.renquiryService.getREnquiry(this.REnquiryId).subscribe(
       data=>{console.log(data);
@@ -33,7 +37,7 @@ export class RenquiryComponent implements OnInit {
      },
      error=>console.log(error)
     );
-   }
+   }*/
   }
   onSubmit(form:NgForm)
   {
@@ -42,8 +46,22 @@ export class RenquiryComponent implements OnInit {
     //insert
     if(addId==0 || addId==null)
     {
+      form.setValue({
+        ResourceEnquiryId:0,
+        Description:form.value.Description,
+        EnquiryDate:form.value.EnquiryDate,
+        ResourceId:form.value.ResourceId,
+        Email:form.value.Email,
+        AdminReply:null,
+        AdminReplyDate:null,
+        IsActive:1,
+        StatusId:1,
+        QualificationId:form.value.QualificationId,
+        EnquirerName:form.value.EnquirerName,
+        
+      })
       this.insertREnquiryRecord(form);
-    }
+    }/*
     else
     {
       //update
@@ -51,7 +69,7 @@ export class RenquiryComponent implements OnInit {
       this.updateREnquiryRecord(form);
       this.toastrService.success('Resource Enquiry record has been updated','CRM');
 
-    }
+    }*/
   }
   //clear all contents at initialization
   resetForm(form?:NgForm){
@@ -73,7 +91,7 @@ export class RenquiryComponent implements OnInit {
     );
     window.location.reload();
   }
-  //defining update record
+  /*defining update record
   updateREnquiryRecord(form?:NgForm)
   {
     this.renquiryService.updateREnquiry(form.value).subscribe( 
@@ -85,7 +103,7 @@ export class RenquiryComponent implements OnInit {
     }
     );
     window.location.reload();
-  }
+  }*/
 
   
 }

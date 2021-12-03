@@ -18,7 +18,7 @@
     <!--Resource Cost-->
     <div class="form-group">
         <label>Resource Cost</label>
-        <input name="ResourceCost" #ResourceCost="ngModel" [(ngModel)]="resourceService.formData.ResourceCost"
+        <input type ="number" name="ResourceCost" #ResourceCost="ngModel" [(ngModel)]="resourceService.formData.ResourceCost"
             class="form-control" placeholder="Enter Resource Cost" required
             [ngClass]="{ 'is-invalid': ResourceCost.touched && ResourceCost.invalid }" />
             <!--
@@ -42,7 +42,7 @@
     <!--Resource Capacity-->
     <div class="form-group">
         <label>Resource Capacity</label>
-        <input name="capacity" #capacity="ngModel" [(ngModel)]="resourceService.formData.Capacity" class="form-control"
+        <input type="number" name="capacity" #capacity="ngModel" [(ngModel)]="resourceService.formData.Capacity" class="form-control"
             placeholder="Enter Resource capacity" required
             [ngClass]="{ 'is-invalid': capacity.touched && capacity.invalid }" />
             <!--

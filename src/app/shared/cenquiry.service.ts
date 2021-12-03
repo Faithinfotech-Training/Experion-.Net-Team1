@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Cenquiry} from './cenquiry';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { Qualification } from './qualification';
+import { Status } from './status';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,10 +13,25 @@ export class CenquiryService {
   //create an instance
   formData: Cenquiry = new Cenquiry();
   cenquiries: Cenquiry[];
+  CEnquiryId:number;
+  qualifications:Qualification[];
+  statuses:Status[];
 
   constructor(private httpClient: HttpClient) { }
 
-  
+  BindCmdQualification(){
+    this.httpClient.get(environment.apiUrl+"/api/course/GetQualifications")
+    .toPromise().then(response=>
+      this.qualifications=response as Qualification[]);
+  }
+
+  BindCmdStatus(){
+    this.httpClient.get(environment.apiUrl+"/api/course/GetStatus")
+    .toPromise().then(response=>
+      this.statuses=response as Status[]);
+  }
+
+
   //binding course enquiry data to get
   bindListCEnquiry()
   {
@@ -33,8 +50,8 @@ export class CenquiryService {
     return this.httpClient.put(environment.apiUrl+ "/api/Enquiry/UpdateCourseEnquiry",cenquiry);
   }
   //get a particular course enquiry
-  getCEnquiry(CEnquiryId:number):Observable<any>{
-    //console.log("Value in service",CEnquiryId)
+  getCEnquiry(CEnquiryId):Observable<any>{
+    console.log("Value in service",CEnquiryId)
     return this.httpClient.get(environment.apiUrl+"/api/Enquiry/GetCEnquiryById?id="+CEnquiryId);
   }
   

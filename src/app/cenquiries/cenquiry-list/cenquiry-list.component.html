@@ -26,8 +26,8 @@
                 <td (click)="populateForm(cenquiry) ">{{cenquiry.CourseId}}</td>
                 <td (click)="populateForm(cenquiry) ">{{cenquiry.Email}}</td>
                 <td>
-                    <button class="btn btn-sm btn-outline-danger" (click)="deleteEnquiry(cenquiry)">Reject</button>&nbsp;
-                    <button class="btn btn-sm btn-info" (click)="updateCEnquiry(cenquiry.CourseEnquiryId)">Reply</button>
+                    <button class="btn btn-sm btn-outline-danger" (click)="deleteEnquiry(cenquiry)">X</button>&nbsp;
+                    <button class="btn btn-sm btn-info" (click)="updateCEnquiry(cenquiry.CourseEnquiryId,cenquiry)">Reply</button>
                 </td>
             </tr>
         </tbody>
