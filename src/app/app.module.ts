@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';;
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {ResourceService} from './shared/resource.service';
-import {UserService} from './shared/user.service';
+import { ResourceService } from './shared/resource.service';
+import { UserService } from './shared/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -38,13 +38,23 @@ import { RenquiryService } from './shared/renquiry.service';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { UserListComponent } from './users/user-list/user-list.component';
+
+import { AboutComponent } from './about/about.component';
+
 import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.component';
+<<<<<<< HEAD
 import { RenquiryEditComponent } from './renquiries/renquiry-edit/renquiry-edit.component';
 import { CenquiryStatusComponent } from './cenquiries/cenquiry-status/cenquiry-status.component';
 import { RenquiryStatusComponent } from './renquiries/renquiry-status/renquiry-status.component';
 import { CenquiryNewComponent } from './cenquiries/cenquiry-new/cenquiry-new.component';
 import { RenquiryNewComponent } from './renquiries/renquiry-new/renquiry-new.component';
 import  {PagevisitService} from './shared/pagevist.service';
+=======
+import { UsercourselistComponent } from './usercourselist/usercourselist.component';
+import { UserresourcelistComponent } from './userresourcelist/userresourcelist.component';
+
+
+>>>>>>> ef3abde1804e2cd148e2cb063299a4d58f33f1eb
 
 
 @NgModule({
@@ -72,12 +82,20 @@ import  {PagevisitService} from './shared/pagevist.service';
     UsersComponent,
     UserComponent,
     UserListComponent,
+<<<<<<< HEAD
     CenquiryEditComponent,
     RenquiryEditComponent,
     CenquiryStatusComponent,
     RenquiryStatusComponent,
     CenquiryNewComponent,
     RenquiryNewComponent
+=======
+    AboutComponent,
+    CenquiryEditComponent,
+    UsercourselistComponent,
+    UserresourcelistComponent
+
+>>>>>>> ef3abde1804e2cd148e2cb063299a4d58f33f1eb
   ],
   imports: [
     BrowserModule,
@@ -88,14 +106,25 @@ import  {PagevisitService} from './shared/pagevist.service';
     BrowserAnimationsModule,// required animations module
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
   ],
+<<<<<<< HEAD
   providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,PagevisitService,UserService,ResourceService,
   {
     provide: HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,
     multi:true
   }],
+=======
+  providers: [AuthService, AuthGuard, CenquiryService, RenquiryService, UserService, ResourceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }],
+>>>>>>> ef3abde1804e2cd148e2cb063299a4d58f33f1eb
   bootstrap: [AppComponent]
 })
 export class AppModule { }

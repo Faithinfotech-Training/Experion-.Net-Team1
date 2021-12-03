@@ -3,14 +3,14 @@
         <h5>Course Info</h5>
         <!--Search functionality-->
         <div class="form-group">
-            <input class="form-control" type="text"
-            placeholder="Search here..." [(ngModel)]="filter"> 
+            <input class="form-control" type="text" placeholder="Search here..." [(ngModel)]="filter">
 
         </div>
-      <!-- <button class="btn btn-primary" style="float: right; margin-bottom: 10px;">Add Employee</button>-->
-      <a [routerLink]="['../course']"class="btn btn-primary" style="float: right; margin-bottom: 10px;">Add Course</a>
+        <!-- <button class="btn btn-primary" style="float: right; margin-bottom: 10px;">Add Employee</button>-->
+        <a [routerLink]="['../course']" class="btn btn-primary" style="float: right; margin-bottom: 10px;">Add
+            Course</a>
     </div>
-    <table class="table table-bordered table-striped">
+   <table class="table table-bordered table-striped">
      <thead>
          <tr>
              <th>Course Id</th>
@@ -27,6 +27,7 @@
              <td (click)="populateForm(crs)">{{crs.CourseName}}</td>
              <td (click)="populateForm(crs)">{{crs.CoursePrice}}</td>
              <td (click)="populateForm(crs)">{{crs.CourseDescription}}</td>
+             
              <td>
                  <button (click)="deleteCourse(crs)"class="btn btn-sm btn-outline-danger"
                  >X</button>&nbsp;
@@ -36,11 +37,10 @@
          </tr>
      </tbody>
     </table>
+   
     <div class="footer">
         <!--Pagination-->
         <pagination-controls (pageChange)="page=($event)"></pagination-controls>
     </div>
 
 </div>
-    
-

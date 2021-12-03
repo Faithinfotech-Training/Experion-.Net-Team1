@@ -63,8 +63,6 @@ export class CourseComponent implements OnInit {
         }
     
       }
-    
-    
       //insert
       insertCourseRecord(form?:NgForm){
         console.log("inserting a record...");
