@@ -43,6 +43,7 @@ import { AboutComponent } from './about/about.component';
 
 import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.component';
 import { UsercourselistComponent } from './usercourselist/usercourselist.component';
+import { UserresourcelistComponent } from './userresourcelist/userresourcelist.component';
 
 
 
@@ -72,16 +73,10 @@ import { UsercourselistComponent } from './usercourselist/usercourselist.compone
     UsersComponent,
     UserComponent,
     UserListComponent,
-
     AboutComponent,
-
-
-
     CenquiryEditComponent,
-
-
-
-    UsercourselistComponent
+    UsercourselistComponent,
+    UserresourcelistComponent
 
   ],
   imports: [

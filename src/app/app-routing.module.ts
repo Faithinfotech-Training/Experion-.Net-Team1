@@ -26,6 +26,8 @@ import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenqu
 import { CordinatorComponent } from './cordinator/cordinator.component';
 import { UserComponent } from './users/user/user.component';
 import { UsercourselistComponent } from './usercourselist/usercourselist.component';
+import { UserresourcelistComponent } from './userresourcelist/userresourcelist.component';
+
 
 const routes: Routes = [
 
@@ -75,8 +77,9 @@ const routes: Routes = [
 
   {path:'about',component:AboutComponent},
   {path:'usercourselist',component:UsercourselistComponent},
+  {path:'userresourcelist',component:UserresourcelistComponent},
   {path:'renquirylist',component:RenquiryListComponent},
-    {path:'renquirylist',component:RenquiryListComponent}
+  {path:'renquirylist',component:RenquiryListComponent}
 ];
 
 @NgModule({
