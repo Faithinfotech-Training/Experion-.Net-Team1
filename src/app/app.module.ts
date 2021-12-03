@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';;
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {ResourceService} from './shared/resource.service';
+import { ResourceService } from './shared/resource.service';
+import { UserService } from './shared/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -37,7 +38,12 @@ import { RenquiryService } from './shared/renquiry.service';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { UserListComponent } from './users/user-list/user-list.component';
+
 import { AboutComponent } from './about/about.component';
+
+import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.component';
+
+
 
 
 @NgModule({
@@ -65,7 +71,13 @@ import { AboutComponent } from './about/about.component';
     UsersComponent,
     UserComponent,
     UserListComponent,
-    AboutComponent
+
+    AboutComponent,
+
+
+
+    CenquiryEditComponent
+
   ],
   imports: [
     BrowserModule,
@@ -76,14 +88,16 @@ import { AboutComponent } from './about/about.component';
     BrowserAnimationsModule,// required animations module
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
   ],
-  providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,ResourceService,
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass:AuthInterceptor,
-    multi:true
-  }],
+  providers: [AuthService, AuthGuard, CenquiryService, RenquiryService, UserService, ResourceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

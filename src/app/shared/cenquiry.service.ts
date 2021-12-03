@@ -34,6 +34,7 @@ export class CenquiryService {
   }
   //get a particular course enquiry
   getCEnquiry(CEnquiryId:number):Observable<any>{
+    //console.log("Value in service",CEnquiryId)
     return this.httpClient.get(environment.apiUrl+"/api/Enquiry/GetCEnquiryById?id="+CEnquiryId);
   }
   

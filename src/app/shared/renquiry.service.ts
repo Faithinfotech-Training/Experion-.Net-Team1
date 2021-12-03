@@ -29,7 +29,7 @@ export class RenquiryService {
     //update
     updateREnquiry(renquiry:Renquiry):Observable<any>
     {
-      return this.httpClient.post(environment.apiUrl+ "/api/enquiry/UpdateResourceEnquiry",renquiry);
+      return this.httpClient.put(environment.apiUrl+ "/api/enquiry/UpdateResourceEnquiry",renquiry);
     }
     //get a particular resource enquiry
     getREnquiry(REnquiryId:number):Observable<any>{

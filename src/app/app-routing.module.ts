@@ -12,16 +12,19 @@ import { ResourceListComponent } from './resources/resource-list/resource-list.c
 import { ResourceComponent } from './resources/resource/resource.component';
 import { ResourcesComponent } from './resources/resources.component';
 import {AuthGuard} from './shared/auth.guard';
+
 import { CenquiriesComponent } from './cenquiries/cenquiries.component';
 import { CenquiryListComponent } from './cenquiries/cenquiry-list/cenquiry-list.component';
 import { CenquiryComponent } from './cenquiries/cenquiry/cenquiry.component';
 import { UpdatecenquiryComponent } from './cenquiries/updatecenquiry/updatecenquiry.component';
-//import { Routes, RouterModule } from '@angular/router';
+
 import { RenquiriesComponent } from './renquiries/renquiries.component';
 import { RenquiryListComponent } from './renquiries/renquiry-list/renquiry-list.component';
 import { RenquiryComponent } from './renquiries/renquiry/renquiry.component';
 import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenquiry.component';
+
 import { CordinatorComponent } from './cordinator/cordinator.component';
+import { UserComponent } from './users/user/user.component';
 
 const routes: Routes = [
 
@@ -31,30 +34,35 @@ const routes: Routes = [
   {path:'resourcelist',component: ResourceListComponent},
   {path:'resource/:resourceId', component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resourcelist/resource',component: ResourceComponent},
-  {path:'home', component: HomeComponent},
-  {path:'login', component: LoginComponent},
-  {path:'admin', component: AdminComponent, canActivate:[AuthGuard],data:{role:'1'}},
-  {path:'manager', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'2'}},
-  {path:'cordinator', component: CordinatorComponent,canActivate:[AuthGuard],data:{role:'3'}},
-  //{path:'user', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'4'}},
   {path:'courses',component:CoursesComponent},
   {path:'course', component: CourseComponent},
   {path:'courselist',component: CourseListComponent},
   {path:'course/:corId', component: CourseComponent},
   {path:'courselist/course',component: CourseComponent},
-  {path:'Cenquiries',component:CenquiriesComponent},
-  {path:'Cenquiry',component:CenquiryComponent},
-  {path:'CenquiryList',component:CenquiryListComponent},
-  {path:'UpdateCenquiry',component:UpdatecenquiryComponent},
-  {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
-  {path:'Renquiries',component:RenquiriesComponent},
-  {path:'Renquiry',component:RenquiryComponent},
-  {path:'UpdateRenquiry',component:UpdaterenquiryComponent},
+
+  {path:'home', component: HomeComponent},
+  {path:'login', component: LoginComponent},
+  {path:'admin', component: AdminComponent, canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'manager', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'2'}},
+  {path:'cordinator', component: CordinatorComponent,canActivate:[AuthGuard],data:{role:'3'}},
+  {path:'user', component: UserComponent}, //registration
+
+
+
   {path:'cenquiries',component:CenquiriesComponent},
   {path:'cenquiry',component:CenquiryComponent},
   {path:'cenquirylist',component:CenquiryListComponent},
   {path:'updatecenquiry',component:UpdatecenquiryComponent},
+
+  {path:'cenquiry/:cenquiryId',component:CenquiryComponent},
+  {path:'renquiries',component:RenquiriesComponent},
+  {path:'renquiry',component:RenquiryComponent},
+  {path:'updaterenquiry',component:UpdaterenquiryComponent},
+  {path:'updatecenquiry',component:UpdatecenquiryComponent},
+  {path:'renquiry/:renquiryId',component:RenquiryComponent},
+
   {path:'cenquiry/:CEnquiryId',component:CenquiryComponent},
+
   {path:'renquiries',component:RenquiriesComponent},
   {path:'renquiry',component:RenquiryComponent},
   {path:'updaterenquiry',component:UpdaterenquiryComponent},
@@ -66,12 +74,16 @@ const routes: Routes = [
   {path:'renquiry',component:RenquiryComponent},
   {path:'updateRenquiry',component:UpdaterenquiryComponent},
   {path:'renquiry/:renquiryId',component:RenquiryComponent},
+
   {path:'about',component:AboutComponent},
 
 
 
-  {path:'renquirylist',component:RenquiryListComponent}
+  {path:'renquirylist',component:RenquiryListComponent},
 
+
+
+    {path:'renquirylist',component:RenquiryListComponent}
 
 ];
 

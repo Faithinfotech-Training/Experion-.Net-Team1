@@ -17,7 +17,10 @@ export class UserService {
 
    //insert users
    insertUser(users: User): Observable<any> {
-    return this.httpClient.post(environment.apiUrl + "/api/user/adduser", users)
+     console.log("before url",users);
+     return this.httpClient.post(environment.apiUrl+'/api/user/adduser',users);
+    //return this.httpClient.post(environment.apiUrl + "/api/user/adduser", users)
+    //https://localhost:44355/api/user/adduser
   }
 
   //update resource

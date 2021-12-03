@@ -93,7 +93,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("username", this.jwtResponse.uName);
           localStorage.setItem("ACCESS_ROLE", this.jwtResponse.rId.toString());
           sessionStorage.setItem("username", this.jwtResponse.uName);
-          this.router.navigateByUrl('');
+          this.router.navigateByUrl('./user');
         }
           else {
             this.error = "sorry not allowed...Invalid authorization"

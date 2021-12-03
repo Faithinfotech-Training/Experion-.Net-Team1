@@ -81,12 +81,12 @@ export class ResourceComponent implements OnInit {
         ((result) => {
           console.log(result);
           this.resetform(form);
-          this.toastrService.success('post record has been inserted', 'blog appv2021');
+          this.toastrService.success('resource has been inserted', 'Training App');
 
         }
         );
       //window.alert("Resource record has been inserted");
-      window.location.reload();
+     window.location.reload();
     }
 
 

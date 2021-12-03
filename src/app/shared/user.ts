@@ -1,12 +1,12 @@
-import { Role } from "./role";
+//import { Role } from "./role";
 
 export class User{
-    Id:number;
+    UserId:number=0;
     UserName:string;
     UserPassword:string;
     RoleId:number;
     //Role:Role;
     UserContact:string;
     UserEmail:string;
-    isActive:boolean;
+    isActive:boolean=true;
 }
