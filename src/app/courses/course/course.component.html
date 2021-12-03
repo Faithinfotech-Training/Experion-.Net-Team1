@@ -71,7 +71,7 @@
 
         <label>Course Price</label>
 
-        <input name="CoursePrice" #CoursePrice="ngModel" [(ngModel)]="corservice.formData.CoursePrice"
+        <input type="number" name="CoursePrice" #CoursePrice="ngModel" [(ngModel)]="corservice.formData.CoursePrice"
             class="form-control" place holder="enter Course Price " minLength="2" maxLength="25" required
             [ngClass]="{'is invalid':CoursePrice.touched && CoursePrice.invalid}" />
 

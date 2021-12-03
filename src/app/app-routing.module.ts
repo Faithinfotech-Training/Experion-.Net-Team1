@@ -65,7 +65,7 @@ const routes: Routes = [
   {path:'renquiry',component:RenquiryComponent},
   {path:'updateRenquiry',component:UpdaterenquiryComponent},
   {path:'renquiry/:renquiryId',component:RenquiryComponent},
-
+  
 
 
   {path:'renquirylist',component:RenquiryListComponent}

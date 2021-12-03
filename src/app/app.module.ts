@@ -39,6 +39,7 @@ import { UserComponent } from './users/user/user.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,9 @@ import { UserListComponent } from './users/user-list/user-list.component';
     UpdaterenquiryComponent,
     UsersComponent,
     UserComponent,
-    UserListComponent
+    UserListComponent,
+   
+
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,9 @@ import { UserListComponent } from './users/user-list/user-list.component';
     BrowserAnimationsModule,// required animations module
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  
+  
   ],
   providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,ResourceService,
   {
