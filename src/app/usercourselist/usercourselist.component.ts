@@ -12,47 +12,46 @@ import { CourseService } from '../shared/course.service';
 export class UsercourselistComponent implements OnInit {
 
   page:number=1;
-  filter:string;
-    constructor(public courseService:CourseService,private toastrService:ToastrService,private router :Router) { }
-  
-    ngOnInit(): void {
-      this.courseService.bindListCourses();
-    }
-  
-  
-    //populate form by clicking the column fields
-    populateForm(cor:Course){
-      console.log(cor);
-      this.courseService.formData=Object.assign({},cor);
-     
-    }
-  
-    deleteCourse(res: Course) {
+filter:string;
+  constructor(public courseService:CourseService,private toastrService:ToastrService,private router :Router) { }
+
+  ngOnInit(): void {
+    this.courseService.bindListCourses();
+  }
+
+
+  //populate form by clicking the column fields
+  populateForm(cor:Course){
+    console.log(cor);
+    this.courseService.formData=Object.assign({},cor);
+   
+  }
+
+  deleteCourse(res: Course) {
+    console.log(res);
+    console.log(res.CourseName);
+    var value = confirm("Are you sure to delete " + res.CourseName + " ?")
+    if (value) {
+      console.log("Deleting a record!!");
+      res.IsAvailable = false;
       console.log(res);
-      console.log(res.CourseName);
-      var value = confirm("Are you sure to delete " + res.CourseName + " ?")
-      if (value) {
-        console.log("Deleting a record!!");
-        res.IsAvailable = false;
-        console.log(res);
-        this.courseService.updateCourse(res).subscribe(
-          (result) => {
-            console.log(result);
-            this.courseService.bindListCourses();
-          });
-        this.toastrService.warning(res.CourseName + " deleted!", 'Training App');
-      }
-      else {
-        //this.toastrService.info("Employee " + id + " deleted!", 'TrainingApp');
-      }
+      this.courseService.updateCourse(res).subscribe(
+        (result) => {
+          console.log(result);
+          this.courseService.bindListCourses();
+        });
+      this.toastrService.warning(res.CourseName + " deleted!", 'Training App');
     }
-  
-  //update a course
-  updateCourse(corId:number)
-  {
-    console.log(corId);
-      this.router.navigate(['course',corId])
-    
+    else {
+      //this.toastrService.info("Employee " + id + " deleted!", 'TrainingApp');
+    }
   }
-  }
+
+//update a course
+updateCourse(corId:number)
+{
+  console.log(corId);
+    this.router.navigate(['course',corId])
   
+}
+}
