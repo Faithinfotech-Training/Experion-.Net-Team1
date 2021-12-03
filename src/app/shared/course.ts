@@ -6,4 +6,5 @@ export class Course {
     IsAvailable:boolean=false;
     CoursePrice :number;
     CourseDescription :string='';
+    UrlString:string='';
 }

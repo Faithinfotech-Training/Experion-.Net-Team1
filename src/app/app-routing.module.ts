@@ -25,6 +25,7 @@ import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenqu
 
 import { CordinatorComponent } from './cordinator/cordinator.component';
 import { UserComponent } from './users/user/user.component';
+import { UsercourselistComponent } from './usercourselist/usercourselist.component';
 
 const routes: Routes = [
 
@@ -46,9 +47,6 @@ const routes: Routes = [
   {path:'manager', component: ManagerComponent,canActivate:[AuthGuard],data:{role:'2'}},
   {path:'cordinator', component: CordinatorComponent,canActivate:[AuthGuard],data:{role:'3'}},
   {path:'user', component: UserComponent}, //registration
-
-
-
   {path:'cenquiries',component:CenquiriesComponent},
   {path:'cenquiry',component:CenquiryComponent},
   {path:'cenquirylist',component:CenquiryListComponent},
@@ -76,15 +74,9 @@ const routes: Routes = [
   {path:'renquiry/:renquiryId',component:RenquiryComponent},
 
   {path:'about',component:AboutComponent},
-
-
-
+  {path:'usercourselist',component:UsercourselistComponent},
   {path:'renquirylist',component:RenquiryListComponent},
-
-
-
     {path:'renquirylist',component:RenquiryListComponent}
-
 ];
 
 @NgModule({
