@@ -1,3 +1,4 @@
+import { AboutComponent } from './about/about.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
@@ -65,6 +66,7 @@ const routes: Routes = [
   {path:'renquiry',component:RenquiryComponent},
   {path:'updateRenquiry',component:UpdaterenquiryComponent},
   {path:'renquiry/:renquiryId',component:RenquiryComponent},
+  {path:'about',component:AboutComponent},
 
 
 

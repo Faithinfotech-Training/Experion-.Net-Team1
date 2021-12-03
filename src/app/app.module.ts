@@ -37,6 +37,7 @@ import { RenquiryService } from './shared/renquiry.service';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { UserListComponent } from './users/user-list/user-list.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { UserListComponent } from './users/user-list/user-list.component';
     UpdaterenquiryComponent,
     UsersComponent,
     UserComponent,
-    UserListComponent
+    UserListComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
