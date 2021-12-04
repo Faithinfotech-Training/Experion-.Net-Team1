@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { PagevisitService } from 'src/app/shared/pagevist.service';
 import { Renquiry } from 'src/app/shared/renquiry';
 import { RenquiryService } from 'src/app/shared/renquiry.service';
 
@@ -16,12 +17,12 @@ export class RenquiryComponent implements OnInit {
   renquiry:Renquiry = new Renquiry();
 
   constructor(public renquiryService:RenquiryService,private route:ActivatedRoute,private router:Router,
-    private toastrService:ToastrService) { }
+    private toastrService:ToastrService,public pagevisit:PagevisitService) { }
     
   ngOnInit(): void {
     this.renquiryService.BindCmdQualification();
     this.renquiryService.bindListREnquiry();
-
+    this.UpdatePage();
 
     this.REnquiryId=this.route.snapshot.params['REnquiryId'];
     this.resetForm();
@@ -56,7 +57,7 @@ export class RenquiryComponent implements OnInit {
         AdminReplyDate:null,
         IsActive:1,
         StatusId:1,
-        QualificationId:form.value.QualificationId,
+        //QualificationId:form.value.QualificationId,
         EnquirerName:form.value.EnquirerName,
         
       })
@@ -77,6 +78,11 @@ export class RenquiryComponent implements OnInit {
       form.resetForm();
     }
   }
+  UpdatePage()
+{
+ this.pagevisit.UpdatePageCount(5);
+
+}
   //defining insert record
   insertREnquiryRecord(form?:NgForm)
   {

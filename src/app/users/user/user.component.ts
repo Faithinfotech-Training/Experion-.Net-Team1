@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/shared/user';
-import {UserService} from 'src/app/shared/user.service';
+import { UserService } from 'src/app/shared/user.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -12,85 +12,71 @@ import {UserService} from 'src/app/shared/user.service';
 })
 export class UserComponent implements OnInit {
 
-  constructor(public userService:UserService,private route:ActivatedRoute,private router:Router,
-    private toastrService:ToastrService) { }
-    UserId:number;
-    user:User = new User();
+  constructor(public userService: UserService, private route: ActivatedRoute, private router: Router,
+    private toastrService: ToastrService) { }
+  UserId: number;
+  user: User = new User();
   ngOnInit(): void {
-    this.UserId=this.route.snapshot.params['UserId'];
+    this.UserId = this.route.snapshot.params['UserId'];
 
     this.userService.bindListUsers();
 
-   if(this.UserId!=0 || (this.UserId!=null))
-   {
-    this.userService.getUser(this.UserId).subscribe(
-      data=>{console.log(data);
-       var datePipe= new DatePipe("en-UK");
-     let formatedDate:any=datePipe.transform(data.EnquiryDate,'yyyy-MM-dd');
-     data.EnquiryDate=formatedDate
-     this.userService.formData=Object.assign({},data);
-     },
-     error=>console.log(error)
-    );
-   }
+    if (this.UserId != 0 || (this.UserId != null)) {
+      this.userService.getUser(this.UserId).subscribe(
+        data => {
+          console.log(data);
+          var datePipe = new DatePipe("en-UK");
+          let formatedDate: any = datePipe.transform(data.EnquiryDate, 'yyyy-MM-dd');
+          data.EnquiryDate = formatedDate
+          this.userService.formData = Object.assign({}, data);
+        },
+        error => console.log(error)
+      );
+    }
   }
-  onSubmit(form:NgForm)
-  {
+  onSubmit(form: NgForm) {
     console.log(form.value);
-    let addId=this.userService.formData.UserId;
+    let addId = this.userService.formData.UserId;
     //insert
-    if(addId==0 || addId==null)
-    {
-       //insert
-      form.setValue({
-        UserId:0,
-        RoleId:4,
-        IsActive:1,
-        UserName:form.value.UserName,
-        UserPassword:form.value.UserPassword,
-        UserContact:form.value.UserContact,
-        UserEmail:form.value.UserEmail,
-      })
+    if (addId == 0 || addId == null) {
+      console.log("inserting////");
       this.insertUserRecord(form);
     }
-    else
-    {
+    else {
       //update
       console.log("Updating record...");
       this.updateUserRecord(form);
-      this.toastrService.success('User record has been updated','CRM');
+      this.toastrService.success('User record has been updated', 'CRM');
 
     }
   }
   //clear all contents at initialization
-  resetForm(form?:NgForm){
-    if(form != null){
+  resetForm(form?: NgForm) {
+    if (form != null) {
       form.resetForm();
     }
   }
   //defining insert record
-  insertUserRecord(form?:NgForm)
-  {
+  insertUserRecord(form?: NgForm) {
     console.log("Inserting a record...");
-    this.userService.insertUser(form.value).subscribe( 
-      (result)=>{
+    this.userService.insertUser(form.value).subscribe(
+      (result) => {
         console.log(result);
         this.resetForm(form);
-        this.toastrService.success("User record has been inserted","CRM");
+        this.toastrService.success("User record has been inserted", "CRM");
       }
     );
     //window.location.reload();
   }
   //defining update record
-  updateUserRecord(form?:NgForm)
-  {
-    this.userService.updateUser(form.value).subscribe( 
-    (result)=>{
-      console.log(result);
-      this.resetForm(form);
-      this.toastrService.success("User record has been updated","CRM");
-      this.userService.bindListUsers();
-    }
+  updateUserRecord(form?: NgForm) {
+    this.userService.updateUser(form.value).subscribe(
+      (result) => {
+        console.log(result);
+        this.resetForm(form);
+        this.toastrService.success("User record has been updated", "CRM");
+        this.userService.bindListUsers();
+      }
     );
     //window.location.reload();
   }

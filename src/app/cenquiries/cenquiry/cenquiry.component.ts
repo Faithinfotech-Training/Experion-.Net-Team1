@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Cenquiry } from 'src/app/shared/cenquiry';
 import { CenquiryService } from 'src/app/shared/cenquiry.service';
 import { DatePipe } from '@angular/common';
+import { PagevisitService } from 'src/app/shared/pagevist.service';
 
 @Component({
   selector: 'app-cenquiry',
@@ -16,15 +17,16 @@ export class CenquiryComponent implements OnInit {
   CEnquiryId: number;
   cenquiry: Cenquiry = new Cenquiry();
 
-  constructor(public cenquiryService: CenquiryService, private route: ActivatedRoute, 
+  constructor(public pagevisit: PagevisitService, public cenquiryService: CenquiryService, private route: ActivatedRoute,
     private router: Router,
     private toastrService: ToastrService) { }
- 
+
 
 
   ngOnInit(): void {
     this.cenquiryService.BindCmdQualification();
     this.cenquiryService.bindListCEnquiry();
+    this.UpdatePage();
 
     this.CEnquiryId = this.route.snapshot.params['CEnquiryId'];
     this.resetForm();
@@ -50,20 +52,20 @@ export class CenquiryComponent implements OnInit {
     let addId = this.cenquiryService.formData.CourseEnquiryId;
     //insert
     if (addId == 0 || addId == null) {
-       //insert
+      //insert
       form.setValue({
-        CourseEnquiryId:0,
-        Description:form.value.Description,
-        EnquiryDate:form.value.EnquiryDate,
-        CourseId:form.value.CourseId,
-        Email:form.value.Email,
-        AdminReply:null,
-        AdminReplyDate:null,
-        IsActive:1,
-        StatusId:1,
-        QualificationId:form.value.QualificationId,
-        EnquirerName:form.value.EnquirerName,
-        
+        CourseEnquiryId: 0,
+        Description: form.value.Description,
+        EnquiryDate: form.value.EnquiryDate,
+        CourseId: form.value.CourseId,
+        Email: form.value.Email,
+        AdminReply: null,
+        AdminReplyDate: null,
+        IsActive: 1,
+        StatusId: 1,
+        QualificationId: form.value.QualificationId,
+        EnquirerName: form.value.EnquirerName,
+
       })
       this.insertCEnquiryRecord(form);
     }/*
@@ -96,6 +98,11 @@ export class CenquiryComponent implements OnInit {
       }
     );
     window.location.reload();
+  }
+
+  UpdatePage() {
+    this.pagevisit.UpdatePageCount(3);
+
   }
 
   /*defining update record

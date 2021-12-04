@@ -1,9 +1,7 @@
 <form name="userform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
 
     <!--User ID-->
-    <input type="hidden" name="UserId" [(ngModel)]="userService.formData.UserId" />
-    <input type="hidden" name="RoleId" [(ngModel)]="userService.formData.RoleId" />
-    <input type="hidden" name="IsActive" [(ngModel)]="userService.formData.IsActive" />
+    <input type="text" name="UserId" [(ngModel)]="userService.formData.UserId" />
 
     <!--UserName-->
     <div class="form-group">
@@ -37,7 +35,7 @@
             </div>
         </div>
     </div>
-    <!--Role Id
+    <!--Role Id-->
     <div class="form-group">
         <label>Role Id</label>
         <input type="text" name="RoleId" #RoleId="ngModel" [(ngModel)]="userService.formData.RoleId" class="form-control" placeholder="Enter RoleId" required [ngClass]="{ 'is-invalid': RoleId.touched && RoleId.invalid }" />
@@ -46,7 +44,7 @@
                 Role Id is required
             </div>
         </div>
-    </div>-->
+    </div>
 
     <!--User Email-->
     <div class="form-group">
@@ -60,14 +58,14 @@
         </div>
     </div>
 
-    <!--IsActive
+    <!--IsActive-->
     <div class="form-group">
         <div class="form-check">
             <label class="form-check-label">Is Active</label>
             <input type="checkbox" name="IsActive" id="IsActive" #IsActive="ngModel" [(ngModel)]="userService.formData.IsActive" class="form-check-input">
 
         </div>
-    </div>-->
+    </div>
 
 
     <!--Submit button-->

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { PagevisitService } from '../shared/pagevist.service';
 import { Resource } from '../shared/resource';
 import { ResourceService } from '../shared/resource.service';
 
@@ -14,11 +15,11 @@ export class UserresourcelistComponent implements OnInit {
   page: number = 1;
   filter: string;
 
-  constructor(public resourceService: ResourceService, private toastrService: ToastrService, private router: Router) { }
+  constructor(public pagevisit:PagevisitService, public resourceService: ResourceService, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
     this.resourceService.bindListResources();
-    
+    this.UpdatePage();
   }
 
    //populate form by clicking the column fields
@@ -27,6 +28,11 @@ export class UserresourcelistComponent implements OnInit {
     this.resourceService.formData=Object.assign({},resource);
 
   }
+  UpdatePage()
+{
+ this.pagevisit.UpdatePageCount(4);
+
+}
 
   deleteResource(res: Resource) {
     console.log(res);

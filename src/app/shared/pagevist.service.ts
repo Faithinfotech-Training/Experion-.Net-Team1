@@ -10,6 +10,7 @@ import { Pagevisit } from './pagevist';
 export class PagevisitService {
   pagevisit: Pagevisit[];
   pageId:number;
+  test:any;
   constructor(private httpClient: HttpClient) { }
 
   bindListPageVisit() {
@@ -18,11 +19,14 @@ export class PagevisitService {
         this.pagevisit = response as Pagevisit[]
       );
      }
-     /*
-     UpdatePageCount(pageId): Observable<any> 
+     
+     UpdatePageCount(pageId)
      {
-       console.log("demo");
-     return this.httpClient.put(environment.apiUrl + "/api/pagevisit/UpdatePageVisit?id="+pageId);
+       console.log("demo",pageId);//,pageId);
+        this.httpClient.get("https://localhost:44355/api/pagevisit/UpdatePageVisit?id="+pageId)
+        .toPromise().then(response => this.test= response as any);
+        //return null;
+      //"/api/pagevisit/UpdatePageVisit?id="+pageId);https://localhost:44355/api/pagevisit/updatepagevisit?id=1
     }
 
      /* Updatedemo(pagename:string){

@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   UpdatePage()
   {
-   // this.pagevisit.UpdatePageCount(1);
+   this.pagevisit.UpdatePageCount(1);
 
   }
 
