@@ -29,8 +29,11 @@ import { UpdaterenquiryComponent } from './renquiries/updaterenquiry/updaterenqu
 
 import { CordinatorComponent } from './cordinator/cordinator.component';
 import { UserComponent } from './users/user/user.component';
+<<<<<<< HEAD
 import { UsercourselistComponent } from './usercourselist/usercourselist.component';
 import { UserresourcelistComponent } from './userresourcelist/userresourcelist.component';
+=======
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
 
 import { CenquiryEditComponent } from './cenquiries/cenquiry-edit/cenquiry-edit.component';
 import { RenquiryEditComponent } from './renquiries/renquiry-edit/renquiry-edit.component';
@@ -38,6 +41,7 @@ import { CenquiryStatusComponent } from './cenquiries/cenquiry-status/cenquiry-s
 import { RenquiryStatusComponent } from './renquiries/renquiry-status/renquiry-status.component';
 import { RenquiryNewComponent } from './renquiries/renquiry-new/renquiry-new.component';
 import { CenquiryNewComponent } from './cenquiries/cenquiry-new/cenquiry-new.component';
+<<<<<<< HEAD
 import { UserListComponent } from './users/user-list/user-list.component';
 import { ChartComponent } from './chart/chart.component';
 //import { ChartComponent } from './chart/chart.component';
@@ -79,6 +83,13 @@ const routes: Routes = [
   { path: 'renquiry/:renquiryId', component: RenquiryComponent },
   { path: 'renquirystatus', component: RenquiryStatusComponent },
   { path: 'cenquiry/:CEnquiryId', component: CenquiryComponent },
+=======
+import { UsercourselistComponent } from './usercourselist/usercourselist.component';
+import { UserresourcelistComponent } from './userresourcelist/userresourcelist.component';
+
+const routes: Routes = [
+
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
   { path: '', redirectTo: "/home", pathMatch: 'full' },
   { path: 'resource', component: ResourceComponent, canActivate: [AuthGuard], data: { role: '1' } },
   { path: 'resources', component: ResourcesComponent, canActivate: [AuthGuard], data: { role: '1' } },
@@ -91,6 +102,7 @@ const routes: Routes = [
   { path: 'course/:corId', component: CourseComponent },
   { path: 'courselist/course', component: CourseComponent },
   { path: 'cenquiries', component: CenquiriesComponent },
+<<<<<<< HEAD
   { path: 'cenquiry', component: CenquiryComponent },
   { path: 'cenquirylist', component: CenquiryListComponent },
   { path: 'renquiries', component: RenquiriesComponent },
@@ -110,6 +122,26 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'usercourselist', component: UsercourselistComponent },
   { path: 'userresourcelist', component: UserresourcelistComponent },
+=======
+  { path: 'cenquiry/:courseId', component: CenquiryComponent },
+  
+  { path: 'cenquirystatus', component: CenquiryStatusComponent },
+  { path: 'cenquirylist', component: CenquiryListComponent },
+  { path: 'cenquiryedit',component: CenquiryEditComponent},
+  { path: 'renquiryedit',component: RenquiryEditComponent},
+
+  { path: 'cenquiry/:cenquiryId', component: CenquiryComponent },
+  { path: 'renquiries', component: RenquiriesComponent },
+  { path: 'renquiry', component: RenquiryComponent },
+  { path: 'renquiryedit', component: RenquiryComponent },
+  { path: 'updaterenquiry', component: UpdaterenquiryComponent },
+
+  { path: 'renquiry/:renquiryId', component: RenquiryComponent },
+  { path: 'renquirystatus', component: RenquiryStatusComponent },
+  { path: 'cenquiry/:CEnquiryId', component: CenquiryComponent },
+  { path: 'usercourselist', component: UsercourselistComponent },
+  { path: 'userresourcelist', component: UserresourcelistComponent }
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
 
 ];
 

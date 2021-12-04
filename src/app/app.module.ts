@@ -49,6 +49,10 @@ import { RenquiryStatusComponent } from './renquiries/renquiry-status/renquiry-s
 import { CenquiryNewComponent } from './cenquiries/cenquiry-new/cenquiry-new.component';
 import { RenquiryNewComponent } from './renquiries/renquiry-new/renquiry-new.component';
 import  {PagevisitService} from './shared/pagevist.service';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
 import { UsercourselistComponent } from './usercourselist/usercourselist.component';
 import { UserresourcelistComponent } from './userresourcelist/userresourcelist.component';
 import { ChartComponent } from './chart/chart.component';
@@ -56,6 +60,10 @@ import { ChartComponent } from './chart/chart.component';
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
 
 
 @NgModule({
@@ -83,19 +91,30 @@ import { ChartComponent } from './chart/chart.component';
     UsersComponent,
     UserComponent,
     UserListComponent,
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
     CenquiryEditComponent,
     RenquiryEditComponent,
     CenquiryStatusComponent,
     RenquiryStatusComponent,
     CenquiryNewComponent,
     RenquiryNewComponent,
+<<<<<<< HEAD
 
+=======
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
     AboutComponent,
     CenquiryEditComponent,
     UsercourselistComponent,
     UserresourcelistComponent,
    ChartComponent
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
   ],
   imports: [
     BrowserModule,
@@ -110,6 +129,10 @@ import { ChartComponent } from './chart/chart.component';
     //ChartsModule
 
   ],
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
   providers: [AuthService,AuthGuard,CenquiryService,RenquiryService,PagevisitService,UserService,ResourceService,
   {
     provide: HTTP_INTERCEPTORS,
@@ -117,7 +140,12 @@ import { ChartComponent } from './chart/chart.component';
     multi:true
   }],
 
+<<<<<<< HEAD
   
+=======
+ 
+
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
   bootstrap: [AppComponent]
 })
 export class AppModule { }

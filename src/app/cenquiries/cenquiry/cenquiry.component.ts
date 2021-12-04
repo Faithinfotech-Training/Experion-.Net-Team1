@@ -16,8 +16,13 @@ export class CenquiryComponent implements OnInit {
 
   CEnquiryId: number;
   cenquiry: Cenquiry = new Cenquiry();
+<<<<<<< HEAD
 
   constructor(public pagevisit: PagevisitService, public cenquiryService: CenquiryService, private route: ActivatedRoute,
+=======
+  CourseId:number;
+  constructor(public cenquiryService: CenquiryService, private route: ActivatedRoute, 
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
     private router: Router,
     private toastrService: ToastrService) { }
 
@@ -26,24 +31,17 @@ export class CenquiryComponent implements OnInit {
   ngOnInit(): void {
     this.cenquiryService.BindCmdQualification();
     this.cenquiryService.bindListCEnquiry();
+<<<<<<< HEAD
     this.UpdatePage();
 
+=======
+    this.CourseId=this.route.snapshot.params['courseId'];
+    console.log(this.CourseId);
+    this.cenquiryService.formData.CourseId=this.CourseId;
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
     this.CEnquiryId = this.route.snapshot.params['CEnquiryId'];
     this.resetForm();
-    /*
-    if (this.CEnquiryId != 0 || this.CEnquiryId != null) {
-      console.log("in course",this.CEnquiryId);
-      this.cenquiryService.getCEnquiry(this.CEnquiryId).subscribe(
-        (data:any): void => {
-          console.log(data);
-          var datePipe = new DatePipe("en-UK");
-          let formatedDate: any = datePipe.transform(data.EnquiryDate, 'yyyy-MM-dd');
-          data.EnquiryDate = formatedDate
-          this.cenquiryService.formData = Object.assign({}, data);
-        },
-        error => console.log(error)
-      );
-    }*/
+    
 
   }
 
@@ -100,6 +98,7 @@ export class CenquiryComponent implements OnInit {
     window.location.reload();
   }
 
+<<<<<<< HEAD
   UpdatePage() {
     this.pagevisit.UpdatePageCount(3);
 
@@ -120,5 +119,8 @@ export class CenquiryComponent implements OnInit {
     );
     window.location.reload();
   }*/
+=======
+  
+>>>>>>> 17bcfe7f40798fd79b9740224f2630364400437c
 }
 
